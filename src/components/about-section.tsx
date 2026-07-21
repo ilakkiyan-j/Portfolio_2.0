@@ -1,14 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { motion } from "framer-motion";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Code2, Brain, Server } from "lucide-react";
 import { AnimatedCounter } from "./animated-counter";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const TECH_STACK = [
   "React", "TypeScript", "Next.js", "Node.js", "Python", "FastAPI",
@@ -42,7 +36,6 @@ function TechRibbon() {
 
 export function AboutSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
 
   const metrics = [
     { label: "DSA Problems Solved", value: 700, suffix: "+" },
@@ -57,65 +50,33 @@ export function AboutSection() {
     { icon: Code2, label: "Full-Stack", desc: "UI to Infrastructure" },
   ];
 
-  // GSAP scroll-triggered reveals for identity card
-  useGSAP(() => {
-    if (!sectionRef.current || !cardRef.current) return;
-
-    gsap.from(cardRef.current, {
-      x: -30,
-      opacity: 0,
-      duration: 0.7,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-        toggleActions: "play none none none",
-      },
-    });
-  }, { scope: sectionRef });
-
   return (
-    <section ref={sectionRef} id="about" className="py-20 bg-surface-secondary relative overflow-hidden">
+    <section ref={sectionRef} id="about" className="py-16 md:py-24 bg-surface-secondary relative overflow-hidden">
       {/* Subtle nebula glow */}
       <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-nebula-blue/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-14"
-        >
-          <span className="text-xs font-bold tracking-widest text-primary mb-4 block uppercase">
+        <div className="mb-10 md:mb-14">
+          <span className="text-xs font-bold tracking-widest text-primary mb-3 block uppercase">
             Behind the Code
           </span>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight max-w-2xl leading-tight">
             Building at the intersection of{" "}
             <span className="text-primary">software and intelligence.</span>
           </h2>
-        </motion.div>
+        </div>
 
-        <div className="grid lg:grid-cols-12 gap-10">
-          {/* Identity Card — Glassmorphism */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-4"
-          >
-            <div
-              ref={cardRef}
-              className="glass-card p-7 relative overflow-hidden"
-            >
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10">
+          {/* Identity Card */}
+          <div className="lg:col-span-4">
+            <div className="glass-card p-6 md:p-7 relative overflow-hidden w-full border border-border bg-surface shadow-sm">
               {/* Decorative wireframe corner */}
               <div className="absolute -top-10 -right-10 w-32 h-32 border border-primary/10 rounded-full pointer-events-none" />
               <div className="absolute -bottom-8 -left-8 w-24 h-24 border border-accent-secondary/10 rounded-full pointer-events-none" />
 
               <div className="relative z-10">
-                <h3 className="text-xl font-bold mb-0.5">Ilakkiyan J</h3>
+                <h3 className="text-xl font-bold mb-0.5 text-foreground">Ilakkiyan J</h3>
                 <p className="text-primary font-semibold text-sm mb-5">
                   Full-Stack × AI Engineer
                 </p>
@@ -135,11 +96,11 @@ export function AboutSection() {
                         key={area.label}
                         className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-primary/5 hover:border-primary/20 border border-transparent transition-all group cursor-default"
                       >
-                        <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 group-hover:scale-110 transition-all">
+                        <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 group-hover:scale-110 transition-all shrink-0">
                           <area.icon size={16} />
                         </div>
                         <div>
-                          <span className="font-semibold text-sm block leading-tight">
+                          <span className="font-semibold text-sm block leading-tight text-foreground">
                             {area.label}
                           </span>
                           <span className="text-xs text-muted-foreground">
@@ -152,43 +113,33 @@ export function AboutSection() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right side: Bio + Metrics + Ribbon */}
-          <div className="lg:col-span-8 flex flex-col justify-between gap-8">
+          <div className="lg:col-span-8 flex flex-col justify-between gap-6 lg:gap-8">
             {/* Bio quote */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="text-lg md:text-xl leading-relaxed text-muted-foreground font-light max-w-2xl"
-            >
+            <div className="text-base md:text-xl leading-relaxed text-muted-foreground font-light max-w-2xl break-words">
               <span className="text-foreground font-semibold text-2xl leading-none">&ldquo;</span>
               I&apos;m a Computer Science and Design graduate who enjoys building
               complete products — from intuitive interfaces and scalable backends
               to AI-powered applications that solve real problems.
               <span className="text-foreground font-semibold text-2xl leading-none">&rdquo;</span>
-            </motion.div>
+            </div>
 
-            {/* Metrics cards — Resilient layout */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {/* Metrics cards — Always 100% visible */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {metrics.map((metric, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="metric-card glass-card p-5 text-center hover:border-primary/30 transition-colors flex flex-col items-center justify-center min-h-[110px]"
+                  className="metric-card glass-card p-4 md:p-5 text-center border border-border bg-surface shadow-sm hover:border-primary/40 transition-all flex flex-col items-center justify-center min-h-[100px] md:min-h-[110px]"
                 >
-                  <span className="text-3xl md:text-4xl font-bold text-foreground block mb-1">
+                  <span className="text-2xl md:text-4xl font-bold text-foreground block mb-1">
                     <AnimatedCounter target={metric.value} suffix={metric.suffix} />
                   </span>
                   <span className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase leading-tight">
                     {metric.label}
                   </span>
-                </motion.div>
+                </div>
               ))}
             </div>
 
