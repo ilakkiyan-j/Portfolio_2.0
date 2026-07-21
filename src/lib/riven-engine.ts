@@ -41,9 +41,8 @@ export function generateKnowledgeEngineResponse(prompt: string): string {
     query.includes("role") ||
     query.includes("position");
 
-  // Arixen / Freelance / Current Work Query
+  // Freelance / Current Work Query
   if (
-    query.includes("arixen") ||
     query.includes("freelance") ||
     query.includes("freelancing") ||
     query.includes("landing page") ||
@@ -53,9 +52,9 @@ export function generateKnowledgeEngineResponse(prompt: string): string {
     query.includes("current work") ||
     query.includes("now")
   ) {
-    return `Ilakkiyan is currently working as a **Freelance Designer & Developer @ Arixen** (Jul 2026 – Present) while actively seeking full-time **Software Engineering & AI Engineer** roles.
+    return `Ilakkiyan is currently working as an **Independent Freelancer** (Jul 2026 – Present) while actively seeking full-time **Software Engineering & AI Engineer** roles.
 
-At Arixen, he specializes in:
+As a freelancer, he specializes in:
 • **High-Converting Landing Pages & Custom Portfolios** (React, Next.js, Tailwind)
 • **Brand Logo Design & Identity**
 • **Business Card & Print Collateral Design**

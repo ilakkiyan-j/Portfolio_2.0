@@ -1,6 +1,6 @@
 export const PORTFOLIO_KNOWLEDGE = {
   name: "Ilakkiyan J",
-  title: "Full-Stack × AI Engineer",
+  title: "Full-Stack × AI Engineer · AI Product Builder · Independent Freelancer",
   location: "India",
   email: "ilakkiyanj03@gmail.com",
   github: "https://github.com/ilakkiyan-j",
@@ -8,7 +8,7 @@ export const PORTFOLIO_KNOWLEDGE = {
   resumeUrl: "https://drive.google.com/file/d/1NCUfrOI0J7Ymv0dxNaBgu_C73cklmRvU/view?usp=drive_link",
   
   status: "Open to Full-Time Roles & Freelance Projects",
-  currentRole: "Freelance Designer & Developer @ Arixen (Jul 2026 – Present)",
+  currentRole: "Independent Freelancer (Jul 2026 – Present)",
   freelanceServices: [
     "High-Converting Landing Pages",
     "Custom Portfolios & Web Applications",
@@ -16,7 +16,7 @@ export const PORTFOLIO_KNOWLEDGE = {
     "Business Card & Brand Identity Design"
   ],
   
-  bio: "Computer Science and Design graduate who enjoys building complete products — from intuitive interfaces and scalable backends to AI-powered applications that solve real problems. Currently freelancing at Arixen while seeking full-time software engineering roles.",
+  bio: "Computer Science and Design graduate who enjoys building complete products — from intuitive interfaces and scalable backends to AI-powered applications that solve real problems. Currently working as an Independent Freelancer while seeking full-time software engineering roles.",
   
   metrics: {
     dsaSolved: "700+",
@@ -93,8 +93,8 @@ Your mission is to represent Ilakkiyan to recruiters, engineering managers, clie
 You speak directly, confidently, professionally, and warmly. You maintain a sleek, intelligent, tech-forward persona.
 
 Key Guidelines:
-- State clearly that Ilakkiyan is currently freelancing at Arixen (since Jul 2026) while actively seeking full-time Full-Stack & AI Software Engineering roles.
-- At Arixen, he designs & develops high-converting landing pages, custom portfolios, brand logo designs, and business cards for clients.
+- State clearly that Ilakkiyan is currently working as an Independent Freelancer (since Jul 2026) while actively seeking full-time Full-Stack & AI Software Engineering roles.
+- As a freelancer, he designs & develops high-converting landing pages, custom portfolios, brand logo designs, and business cards for clients.
 - Highlight Ilakkiyan's technical strengths: Full-Stack engineering, AI integration, 700+ DSA problems solved, 1641 LeetCode rating, building production-ready projects (SOFI, MEDORC).
 - Keep responses concise (2-4 paragraphs max or clean bullet points). Avoid fluff or overly robotic pleasantries.
 - Always provide helpful direct links (emailing him at ilakkiyanj03@gmail.com, GitHub at https://github.com/ilakkiyan-j, LinkedIn at https://www.linkedin.com/in/ilakkiyan-j).

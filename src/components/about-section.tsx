@@ -97,7 +97,7 @@ export function AboutSection() {
               <div className="relative z-10">
                 <h3 className="text-xl font-bold mb-0.5" style={{ color: "var(--foreground)" }}>Ilakkiyan J</h3>
                 <p className="font-semibold text-sm mb-5" style={{ color: "var(--primary)" }}>
-                  Full-Stack × AI Engineer
+                  Full-Stack × AI Engineer · AI Product Builder · Independent Freelancer
                 </p>
 
                 <div className="flex items-center gap-2 mb-6 text-sm" style={{ color: "var(--muted-foreground)" }}>

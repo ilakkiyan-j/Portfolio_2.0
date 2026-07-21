@@ -53,9 +53,7 @@ export function HeroSection() {
               <span className="text-foreground font-medium">Open to Full-Time Roles</span>
               <span className="text-muted-foreground/40">•</span>
               <div className="flex items-center gap-1.5 text-muted-foreground">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/arixen-logo.png" alt="Arixen Logo" className="w-4 h-4 object-contain rounded-sm" />
-                <span>Freelance @ Arixen</span>
+                <span>Independent Freelancer</span>
               </div>
             </motion.div>
 

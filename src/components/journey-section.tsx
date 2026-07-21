@@ -21,10 +21,9 @@ interface Milestone {
 const MILESTONES: Milestone[] = [
   {
     year: "Jul 2026 – Present",
-    title: "Freelance Designer & Dev",
-    description: "Designing & developing high-converting landing pages, custom portfolios, brand logos, and business cards at Arixen.",
+    title: "Independent Freelancer",
+    description: "Designing & developing high-converting landing pages, custom portfolios, brand logos, and business cards for clients.",
     highlight: true,
-    logoUrl: "/arixen-logo.png",
     icon: <Sparkles size={14} />,
     side: "right",
   },
