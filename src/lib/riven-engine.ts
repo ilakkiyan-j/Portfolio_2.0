@@ -41,6 +41,28 @@ export function generateKnowledgeEngineResponse(prompt: string): string {
     query.includes("role") ||
     query.includes("position");
 
+  // Arixen / Freelance / Current Work Query
+  if (
+    query.includes("arixen") ||
+    query.includes("freelance") ||
+    query.includes("freelancing") ||
+    query.includes("landing page") ||
+    query.includes("logo") ||
+    query.includes("business card") ||
+    query.includes("currently doing") ||
+    query.includes("current work") ||
+    query.includes("now")
+  ) {
+    return `Ilakkiyan is currently working as a **Freelance Designer & Developer @ Arixen** (Jul 2026 – Present) while actively seeking full-time **Software Engineering & AI Engineer** roles.
+
+At Arixen, he specializes in:
+• **High-Converting Landing Pages & Custom Portfolios** (React, Next.js, Tailwind)
+• **Brand Logo Design & Identity**
+• **Business Card & Print Collateral Design**
+
+If you'd like to hire him for freelance work or discuss full-time engineering roles, reach out at **[ilakkiyanj03@gmail.com](mailto:ilakkiyanj03@gmail.com)**!`;
+  }
+
   // 1. Frontend Role Query (handles "Why should I hire him for a frotend role", etc.)
   if (isFrontend && (isHiringQuery || query.includes("work") || query.includes("experience"))) {
     return `Here is why Ilakkiyan is an exceptional fit for a **Frontend / UI Engineering** role:

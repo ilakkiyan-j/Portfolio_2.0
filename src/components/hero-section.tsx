@@ -41,6 +41,24 @@ export function HeroSection() {
             initial="hidden"
             animate="visible"
           >
+            {/* Status Pill Badge */}
+            <motion.div
+              variants={itemVariants}
+              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-card border border-border/80 bg-surface/60 text-xs font-semibold mb-5 max-w-fit shadow-sm"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
+              <span className="text-foreground font-medium">Open to Full-Time Roles</span>
+              <span className="text-muted-foreground/40">•</span>
+              <div className="flex items-center gap-1.5 text-muted-foreground">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/arixen-logo.png" alt="Arixen Logo" className="w-4 h-4 object-contain rounded-sm" />
+                <span>Freelance @ Arixen</span>
+              </div>
+            </motion.div>
+
             <motion.h1
               variants={itemVariants}
               className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 leading-[1.08]"

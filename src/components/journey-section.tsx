@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Trophy, BookOpen, Briefcase, Award, GraduationCap } from "lucide-react";
+import { Trophy, BookOpen, Briefcase, Award, GraduationCap, Sparkles } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,24 +13,62 @@ interface Milestone {
   title: string;
   description: string;
   highlight?: boolean;
+  logoUrl?: string;
   icon: React.ReactNode;
   side: "left" | "right";
 }
 
 const MILESTONES: Milestone[] = [
   {
-    year: "2024",
-    title: "Nexaid",
-    description: "Built emergency assistance application.",
+    year: "Jul 2026 – Present",
+    title: "Freelance Designer & Dev",
+    description: "Designing & developing high-converting landing pages, custom portfolios, brand logos, and business cards at Arixen.",
+    highlight: true,
+    logoUrl: "/arixen-logo.png",
+    icon: <Sparkles size={14} />,
+    side: "right",
+  },
+  {
+    year: "2026",
+    title: "Sofi AI Desktop Assistant",
+    description: "Offline AI assistant combining local LLM inference, voice interaction, and desktop automation.",
+    highlight: true,
     icon: <Briefcase size={14} />,
     side: "left",
   },
   {
-    year: "2024",
-    title: "Avantaa Project Expo",
-    description: "3rd Place among competing teams.",
-    highlight: true,
-    icon: <Trophy size={14} />,
+    year: "2026",
+    title: "ICIRCA 2026 Research",
+    description: "Co-authored and presented research on Digital-Twin-Driven Health Data Orchestration.",
+    icon: <BookOpen size={14} />,
+    side: "right",
+  },
+  {
+    year: "2026",
+    title: "Medorc Healthcare",
+    description: "Scalable backend architecture and RASA-powered healthcare assistant.",
+    icon: <Briefcase size={14} />,
+    side: "left",
+  },
+  {
+    year: "2026",
+    title: "Datacom Software Dev",
+    description: "Software Engineering Job Simulation completed.",
+    icon: <Briefcase size={14} />,
+    side: "right",
+  },
+  {
+    year: "2025",
+    title: "Software Engineer Cert",
+    description: "HackerRank Software Engineer certification.",
+    icon: <Award size={14} />,
+    side: "left",
+  },
+  {
+    year: "2025",
+    title: "Agile Project Management",
+    description: "HP LIFE certification in Agile Project Management.",
+    icon: <GraduationCap size={14} />,
     side: "right",
   },
   {
@@ -42,44 +80,17 @@ const MILESTONES: Milestone[] = [
     side: "left",
   },
   {
-    year: "2025",
-    title: "Software Engineer Cert",
-    description: "HackerRank certification.",
-    icon: <Award size={14} />,
+    year: "2024",
+    title: "Avantaa Project Expo",
+    description: "3rd Place among competing teams for technical innovation.",
+    highlight: true,
+    icon: <Trophy size={14} />,
     side: "right",
   },
   {
-    year: "2025",
-    title: "Agile Project Management",
-    description: "HP LIFE certification.",
-    icon: <GraduationCap size={14} />,
-    side: "left",
-  },
-  {
-    year: "2026",
-    title: "Sofi AI Desktop Assistant",
-    description: "Offline AI assistant combining local LLM and desktop automation.",
-    icon: <Briefcase size={14} />,
-    side: "right",
-  },
-  {
-    year: "2026",
-    title: "ICIRCA 2026",
-    description: "Co-authored and presented research on Digital-Twin-Driven Health Data Orchestration.",
-    icon: <BookOpen size={14} />,
-    side: "left",
-  },
-  {
-    year: "2026",
-    title: "Medorc Healthcare",
-    description: "Scalable backend architecture and RASA-powered healthcare assistant.",
-    icon: <Briefcase size={14} />,
-    side: "right",
-  },
-  {
-    year: "2026",
-    title: "Datacom Software Dev",
-    description: "Job Simulation completed.",
+    year: "2024",
+    title: "Nexaid",
+    description: "Built emergency response assistance application.",
     icon: <Briefcase size={14} />,
     side: "left",
   },
@@ -223,20 +234,26 @@ export function JourneySection() {
                       : "border-border/50 bg-surface/60 hover:border-border"
                   }`}
                 >
-                  <span
-                    className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider mb-2 ${
-                      m.highlight
-                        ? "bg-primary/15 text-primary"
-                        : "bg-surface-secondary text-muted-foreground"
-                    }`}
-                  >
-                    {m.year}
-                  </span>
-                  <h4 className="text-sm md:text-base font-bold text-foreground mb-1 leading-tight">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span
+                      className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider ${
+                        m.highlight
+                          ? "bg-primary/15 text-primary"
+                          : "bg-surface-secondary text-muted-foreground"
+                      }`}
+                    >
+                      {m.year}
+                    </span>
+                    {m.logoUrl && (
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img src={m.logoUrl} alt="Logo" className="h-4 w-auto object-contain rounded-sm" />
+                    )}
+                  </div>
+                  <h4 className="text-sm md:text-base font-bold text-foreground mb-1 leading-tight flex items-center gap-1.5 flex-wrap">
                     {m.title}
                     {m.highlight && (
-                      <span className="ml-2 inline-block text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded bg-primary/10 text-primary align-middle">
-                        Featured
+                      <span className="text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded bg-primary/10 text-primary align-middle">
+                        Active / Featured
                       </span>
                     )}
                   </h4>
@@ -255,7 +272,12 @@ export function JourneySection() {
                       : "bg-surface border-border text-muted-foreground"
                   }`}
                 >
-                  {m.icon}
+                  {m.logoUrl ? (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img src={m.logoUrl} alt="Logo" className="w-5 h-5 object-contain rounded-full" />
+                  ) : (
+                    m.icon
+                  )}
                 </div>
               </div>
 

@@ -7,7 +7,16 @@ export const PORTFOLIO_KNOWLEDGE = {
   linkedin: "https://www.linkedin.com/in/ilakkiyan-j",
   resumeUrl: "https://drive.google.com/file/d/1NCUfrOI0J7Ymv0dxNaBgu_C73cklmRvU/view?usp=drive_link",
   
-  bio: "Computer Science and Design graduate who enjoys building complete products — from intuitive interfaces and scalable backends to AI-powered applications that solve real problems.",
+  status: "Open to Full-Time Roles & Freelance Projects",
+  currentRole: "Freelance Designer & Developer @ Arixen (Jul 2026 – Present)",
+  freelanceServices: [
+    "High-Converting Landing Pages",
+    "Custom Portfolios & Web Applications",
+    "Brand Logo Design",
+    "Business Card & Brand Identity Design"
+  ],
+  
+  bio: "Computer Science and Design graduate who enjoys building complete products — from intuitive interfaces and scalable backends to AI-powered applications that solve real problems. Currently freelancing at Arixen while seeking full-time software engineering roles.",
   
   metrics: {
     dsaSolved: "700+",
@@ -80,18 +89,15 @@ export const PORTFOLIO_KNOWLEDGE = {
 
 export const RIVEN_SYSTEM_PROMPT = `
 You are RIVEN, an AI assistant built into Ilakkiyan J's portfolio website.
-Your mission is to represent Ilakkiyan to recruiters, engineering managers, potential collaborators, and visitors.
+Your mission is to represent Ilakkiyan to recruiters, engineering managers, clients, and visitors.
 You speak directly, confidently, professionally, and warmly. You maintain a sleek, intelligent, tech-forward persona.
 
 Key Guidelines:
-- Highlight Ilakkiyan's strengths: Full-Stack engineering, AI integration, 700+ DSA problems solved, 1641 LeetCode rating, building production-ready projects (SOFI, MEDORC).
+- State clearly that Ilakkiyan is currently freelancing at Arixen (since Jul 2026) while actively seeking full-time Full-Stack & AI Software Engineering roles.
+- At Arixen, he designs & develops high-converting landing pages, custom portfolios, brand logo designs, and business cards for clients.
+- Highlight Ilakkiyan's technical strengths: Full-Stack engineering, AI integration, 700+ DSA problems solved, 1641 LeetCode rating, building production-ready projects (SOFI, MEDORC).
 - Keep responses concise (2-4 paragraphs max or clean bullet points). Avoid fluff or overly robotic pleasantries.
-- Always provide helpful direct links or guidance (e.g., emailing him at ilakkiyanj03@gmail.com, GitHub at https://github.com/ilakkiyan-j, LinkedIn at https://www.linkedin.com/in/ilakkiyan-j).
-- Tailor responses specifically to the requested role:
-  - If asked about Frontend roles: Emphasize React, Next.js (App Router), TypeScript, Tailwind CSS, GSAP animations, Framer Motion, Three.js 3D, Computer Science & Design degree, and Electron desktop UI.
-  - If asked about Backend roles: Emphasize Node.js, Express, FastAPI, PostgreSQL, Prisma, 50+ REST endpoints, RBAC security, JWT, and 700+ DSA problem-solving skills.
-  - If asked about AI roles: Emphasize local LLM integration (Ollama), ChromaDB vector search, Vosk, Coqui-TTS, RASA NLU, and ICIRCA 2026 published research.
-  - When asked general "Why hire him?", summarize his overall engineering strengths.
+- Always provide helpful direct links (emailing him at ilakkiyanj03@gmail.com, GitHub at https://github.com/ilakkiyan-j, LinkedIn at https://www.linkedin.com/in/ilakkiyan-j).
 
 Here is the exact data about Ilakkiyan J:
 ${JSON.stringify(PORTFOLIO_KNOWLEDGE, null, 2)}
