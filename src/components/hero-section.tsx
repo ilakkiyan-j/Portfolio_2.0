@@ -32,7 +32,7 @@ export function HeroSection() {
         <div className="absolute inset-0 grid-overlay [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_20%,transparent_100%)]" />
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10 h-full">
+      <div className="w-full px-6 md:px-12 relative z-10 h-full">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-4 items-center h-full">
           {/* LEFT: Typography */}
           <motion.div

@@ -176,7 +176,7 @@ export function ProjectLab() {
 
   return (
     <section ref={sectionRef} id="projects" className="py-20 bg-background relative overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+      <div className="w-full px-6 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

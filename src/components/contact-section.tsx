@@ -128,7 +128,7 @@ export function ContactSection() {
           </svg>
         </div>
 
-        <div className="container mx-auto px-6 md:px-12 relative z-10">
+        <div className="w-full px-6 md:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: Content */}
             <div className="flex flex-col gap-6">
@@ -283,7 +283,7 @@ export function ContactSection() {
 
       {/* Footer */}
       <footer className="bg-background py-10 border-t border-border relative z-10">
-        <div className="container mx-auto px-6 md:px-12">
+        <div className="w-full px-6 md:px-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             {/* Brand */}
             <div className="flex flex-col items-center md:items-start gap-1.5">
