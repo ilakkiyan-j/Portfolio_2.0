@@ -195,10 +195,10 @@ export function JourneySection() {
           className="tl-glow-dot absolute left-5 md:left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none rounded-full"
           style={{
             top: "0%",
-            width: "14px",
-            height: "14px",
+            width: "10px",
+            height: "10px",
             background: "var(--primary)",
-            boxShadow: "0 0 18px 6px rgba(59, 130, 246, 0.85), 0 0 32px 12px rgba(124, 58, 237, 0.6)",
+            boxShadow: "0 0 14px 4px rgba(59, 130, 246, 0.8), 0 0 24px 8px rgba(124, 58, 237, 0.5)",
           }}
         />
 
