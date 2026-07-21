@@ -108,6 +108,9 @@ export function JourneySection() {
       const glowDot = sectionRef.current.querySelector(".tl-glow-dot");
 
       // Color gradient filling down the line
+      // Tighter scrub on desktop (feels snappy), smoother on mobile
+      const scrubValue = window.innerWidth >= 768 ? 0.05 : 0.3;
+
       if (lineFill) {
         gsap.fromTo(
           lineFill,
@@ -119,7 +122,7 @@ export function JourneySection() {
               trigger: sectionRef.current,
               start: "top 60%",
               end: "bottom 40%",
-              scrub: 0.3,
+              scrub: scrubValue,
             },
           }
         );
@@ -137,7 +140,7 @@ export function JourneySection() {
               trigger: sectionRef.current,
               start: "top 60%",
               end: "bottom 40%",
-              scrub: 0.3,
+              scrub: scrubValue,
             },
           }
         );
