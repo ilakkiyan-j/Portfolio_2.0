@@ -19,6 +19,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ilakkiyan J | Full-Stack & AI Engineer",
   description: "Portfolio of Ilakkiyan J, a Full-Stack and AI Engineer building intelligent applications, AI systems, scalable backends, and interactive digital experiences.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
