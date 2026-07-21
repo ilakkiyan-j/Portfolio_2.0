@@ -9,10 +9,10 @@ interface AnimatedCounterProps {
   duration?: number;
 }
 
-export function AnimatedCounter({ target, suffix = "", duration = 2 }: AnimatedCounterProps) {
-  const [count, setCount] = useState(0);
+export function AnimatedCounter({ target, suffix = "", duration = 1.8 }: AnimatedCounterProps) {
+  const [count, setCount] = useState<number>(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
   const hasAnimated = useRef(false);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export function AnimatedCounter({ target, suffix = "", duration = 2 }: AnimatedC
 
   return (
     <span ref={ref} className="tabular-nums">
-      {count}{suffix}
+      {isInView || hasAnimated.current ? count : target}{suffix}
     </span>
   );
 }

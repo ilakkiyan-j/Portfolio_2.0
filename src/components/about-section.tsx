@@ -42,7 +42,6 @@ function TechRibbon() {
 
 export function AboutSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const metricsRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
   const metrics = [
@@ -58,39 +57,21 @@ export function AboutSection() {
     { icon: Code2, label: "Full-Stack", desc: "UI to Infrastructure" },
   ];
 
-  // GSAP scroll-triggered reveals
+  // GSAP scroll-triggered reveals for identity card
   useGSAP(() => {
-    if (!sectionRef.current) return;
+    if (!sectionRef.current || !cardRef.current) return;
 
-    const tl = gsap.timeline({
+    gsap.from(cardRef.current, {
+      x: -30,
+      opacity: 0,
+      duration: 0.7,
+      ease: "power3.out",
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top 80%",
-        end: "center center",
         toggleActions: "play none none none",
       },
     });
-
-    // Stagger metric cards
-    const metricCards = metricsRef.current?.querySelectorAll(".metric-card");
-    if (metricCards?.length) {
-      tl.from(metricCards, {
-        y: 40,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.12,
-        ease: "power3.out",
-      });
-    }
-
-    // Animate identity card
-    if (cardRef.current) {
-      tl.from(
-        cardRef.current,
-        { x: -30, opacity: 0, duration: 0.7, ease: "power3.out" },
-        0
-      );
-    }
   }, { scope: sectionRef });
 
   return (
@@ -190,12 +171,16 @@ export function AboutSection() {
               <span className="text-foreground font-semibold text-2xl leading-none">&rdquo;</span>
             </motion.div>
 
-            {/* Metrics — GSAP animated */}
-            <div ref={metricsRef} className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {/* Metrics cards — Resilient layout */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {metrics.map((metric, index) => (
-                <div
+                <motion.div
                   key={index}
-                  className="metric-card glass-card p-5 text-center hover:border-primary/30 transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="metric-card glass-card p-5 text-center hover:border-primary/30 transition-colors flex flex-col items-center justify-center min-h-[110px]"
                 >
                   <span className="text-3xl md:text-4xl font-bold text-foreground block mb-1">
                     <AnimatedCounter target={metric.value} suffix={metric.suffix} />
@@ -203,7 +188,7 @@ export function AboutSection() {
                   <span className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase leading-tight">
                     {metric.label}
                   </span>
-                </div>
+                </motion.div>
               ))}
             </div>
 

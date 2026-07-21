@@ -143,18 +143,19 @@ export function JourneySection() {
         );
       }
 
-      // Each row slides in from its side
+      // Each row slides in
       rows.forEach((row) => {
         const isLeft = row.classList.contains("tl-left");
 
         gsap.from(row, {
           opacity: 0,
-          x: isLeft ? -40 : 40,
+          y: 30,
+          x: isLeft ? -20 : 20,
           duration: 0.6,
           ease: "power3.out",
           scrollTrigger: {
             trigger: row,
-            start: "top 88%",
+            start: "top 90%",
             toggleActions: "play none none none",
           },
         });
@@ -182,19 +183,13 @@ export function JourneySection() {
       <div className="relative max-w-4xl mx-auto px-6 pb-16">
         {/* Vertical line — base (gray) */}
         <div
-          className="absolute top-0 bottom-0 w-px bg-border"
-          style={{
-            left: "50%",
-            transform: "translateX(-0.5px)",
-          }}
+          className="absolute top-0 bottom-0 w-px bg-border left-5 md:left-1/2 -translate-x-1/2"
         />
 
         {/* Vertical line — color fill (grows on scroll) */}
         <div
-          className="tl-line-fill absolute top-0 w-px origin-top"
+          className="tl-line-fill absolute top-0 w-px origin-top left-5 md:left-1/2 -translate-x-1/2"
           style={{
-            left: "50%",
-            transform: "translateX(-0.5px)",
             height: "0%",
             background: "linear-gradient(to bottom, var(--nebula-blue), var(--nebula-purple), var(--nebula-pink))",
           }}
@@ -202,7 +197,7 @@ export function JourneySection() {
 
         {/* Glow dot at the tip of the fill */}
         <div
-          className="tl-glow-dot absolute left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none rounded-full"
+          className="tl-glow-dot absolute left-5 md:left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none rounded-full"
           style={{
             top: "0%",
             width: "10px",
@@ -219,15 +214,15 @@ export function JourneySection() {
           return (
             <div
               key={i}
-              className={`tl-row relative flex items-center mb-10 last:mb-0 ${
+              className={`tl-row relative flex flex-col md:flex-row items-start md:items-center mb-10 last:mb-0 ${
                 isLeft ? "tl-left" : ""
               }`}
             >
-              {/* Left card */}
-              <div className={`w-[calc(50%-1.5rem)] ${isLeft ? "text-right" : "order-3 text-left"}`}>
+              {/* Card Container */}
+              <div className={`w-[calc(100%-3rem)] ml-auto md:ml-0 md:w-[calc(50%-1.5rem)] ${isLeft ? "md:text-right" : "md:order-3 md:text-left"}`}>
                 <div
-                  className={`inline-block text-left p-4 rounded-xl border transition-all duration-300 ${
-                    isLeft ? "ml-auto" : ""
+                  className={`inline-block text-left p-4.5 rounded-xl border transition-all duration-300 w-full ${
+                    isLeft ? "md:ml-auto" : ""
                   } ${
                     m.highlight
                       ? "border-primary/40 bg-surface/80 shadow-lg shadow-primary/5"
@@ -264,7 +259,7 @@ export function JourneySection() {
               </div>
 
               {/* Center node */}
-              <div className="w-12 flex justify-center order-2 relative z-10 shrink-0">
+              <div className="absolute left-0 top-3 md:relative md:top-auto md:left-auto w-10 md:w-12 flex justify-center md:order-2 z-10 shrink-0">
                 <div
                   className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${
                     m.highlight
@@ -281,8 +276,8 @@ export function JourneySection() {
                 </div>
               </div>
 
-              {/* Empty side */}
-              <div className={`w-[calc(50%-1.5rem)] ${isLeft ? "order-3" : ""}`} />
+              {/* Empty side filler on desktop */}
+              <div className={`hidden md:block w-[calc(50%-1.5rem)] ${isLeft ? "order-3" : ""}`} />
             </div>
           );
         })}
