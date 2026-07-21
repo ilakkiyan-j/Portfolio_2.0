@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -98,17 +99,22 @@ const MILESTONES: Milestone[] = [
 export function JourneySection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  // Ensure ScrollTrigger refreshes after initial layout settles
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   useGSAP(
     () => {
       if (!sectionRef.current) return;
 
-      const rows = sectionRef.current.querySelectorAll(".tl-row");
       const lineFill = sectionRef.current.querySelector(".tl-line-fill");
       const glowDot = sectionRef.current.querySelector(".tl-glow-dot");
 
-      // Color gradient filling down the line
-      // Tighter scrub on desktop (feels snappy), smoother on mobile
-      const scrubValue = window.innerWidth >= 768 ? 0.05 : 0.3;
+      const scrubValue = typeof window !== "undefined" && window.innerWidth >= 768 ? 0.05 : 0.2;
 
       if (lineFill) {
         gsap.fromTo(
@@ -119,15 +125,15 @@ export function JourneySection() {
             ease: "none",
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: "top 60%",
-              end: "bottom 40%",
+              start: "top 75%",
+              end: "bottom 25%",
               scrub: scrubValue,
+              invalidateOnRefresh: true,
             },
           }
         );
       }
 
-      // Glow dot follows the tip of the fill
       if (glowDot) {
         gsap.fromTo(
           glowDot,
@@ -137,31 +143,14 @@ export function JourneySection() {
             ease: "none",
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: "top 60%",
-              end: "bottom 40%",
+              start: "top 75%",
+              end: "bottom 25%",
               scrub: scrubValue,
+              invalidateOnRefresh: true,
             },
           }
         );
       }
-
-      // Each row slides in
-      rows.forEach((row) => {
-        const isLeft = row.classList.contains("tl-left");
-
-        gsap.from(row, {
-          opacity: 0,
-          y: 30,
-          x: isLeft ? -20 : 20,
-          duration: 0.6,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: row,
-            start: "top 90%",
-            toggleActions: "play none none none",
-          },
-        });
-      });
     },
     { scope: sectionRef }
   );
@@ -209,13 +198,17 @@ export function JourneySection() {
           }}
         />
 
-        {/* Milestone rows */}
+        {/* Milestone rows — IntersectionObserver powered via Framer Motion for 100% reliable entry */}
         {MILESTONES.map((m, i) => {
           const isLeft = m.side === "left";
 
           return (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 30, x: isLeft ? -20 : 20 }}
+              whileInView={{ opacity: 1, y: 0, x: 0 }}
+              viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className={`tl-row relative flex flex-col md:flex-row items-start md:items-center mb-10 last:mb-0 ${
                 isLeft ? "tl-left" : ""
               }`}
@@ -280,7 +273,7 @@ export function JourneySection() {
 
               {/* Empty side filler on desktop */}
               <div className={`hidden md:block w-[calc(50%-1.5rem)] ${isLeft ? "order-3" : ""}`} />
-            </div>
+            </motion.div>
           );
         })}
       </div>

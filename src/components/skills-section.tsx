@@ -86,7 +86,7 @@ function SkillLogo({ slug, name, size = 28 }: { slug: string; name: string; size
   // Full URL — AI tools with actual logos from GitHub repos
   if (slug.startsWith("http")) {
     return (
-      // eslint-disable-next-line @next/next/no-img-element
+      /* eslint-disable-next-line @next/next/no-img-element */
       <img
         src={slug}
         alt={name}
@@ -106,7 +106,7 @@ function SkillLogo({ slug, name, size = 28 }: { slug: string; name: string; size
 
   // Devicon CDN — standard tech logos
   return (
-    // eslint-disable-next-line @next/next/no-img-element
+    /* eslint-disable-next-line @next/next/no-img-element */
     <img
       src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg`}
       alt={name}
@@ -160,7 +160,7 @@ function CoreCanvas() {
 
   return (
     <div className="absolute inset-0 pointer-events-none opacity-40">
-      <Canvas camera={{ position: [0, 0, 3], fov: 50 }} dpr={[1, 1.5]} gl={{ alpha: true }}>
+      <Canvas camera={{ position: [0, 0, 3], fov: 50 }} dpr={1} gl={{ alpha: true, powerPreference: "high-performance" }}>
         <Suspense fallback={null}>
           <MiniCore />
         </Suspense>
@@ -169,16 +169,15 @@ function CoreCanvas() {
   );
 }
 
-function SkillCard({ skill, index }: { skill: Skill; index: number }) {
+function SkillCard({ skill }: { skill: Skill }) {
   const color = CATEGORY_COLORS[skill.category];
 
   return (
     <motion.div
-      layout
-      initial={{ opacity: 0, scale: 0.9 }}
+      initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.3, delay: index * 0.03 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.15, ease: "easeOut" }}
       className="glass-card p-4 flex items-center gap-3 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all group cursor-default"
     >
       <div
@@ -241,9 +240,9 @@ export function SkillsSection() {
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
+              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all cursor-pointer ${
                 active === cat
-                  ? "bg-foreground text-background shadow-lg"
+                  ? "bg-foreground text-background shadow-lg scale-105"
                   : "bg-surface-secondary border border-border text-muted-foreground hover:text-foreground hover:border-primary/30"
               }`}
             >
@@ -258,15 +257,18 @@ export function SkillsSection() {
         </div>
 
         {/* Skill grid */}
-        <div ref={gridRef} className="relative">
+        <div ref={gridRef} className="relative min-h-[300px]">
           <CoreCanvas />
-          <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-            <AnimatePresence mode="popLayout">
-              {filtered.map((skill, i) => (
-                <SkillCard key={skill.name} skill={skill} index={i} />
+          <motion.div
+            layout={false}
+            className="relative z-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"
+          >
+            <AnimatePresence mode="popLayout" initial={false}>
+              {filtered.map((skill) => (
+                <SkillCard key={skill.name} skill={skill} />
               ))}
             </AnimatePresence>
-          </div>
+          </motion.div>
         </div>
 
         {/* Legend */}
