@@ -98,6 +98,7 @@ const MILESTONES: Milestone[] = [
 
 export function JourneySection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
 
   // Ensure ScrollTrigger refreshes after initial layout settles
   useEffect(() => {
@@ -109,13 +110,14 @@ export function JourneySection() {
 
   useGSAP(
     () => {
-      if (!sectionRef.current) return;
+      if (!timelineRef.current) return;
 
-      const lineFill = sectionRef.current.querySelector(".tl-line-fill");
-      const glowDot = sectionRef.current.querySelector(".tl-glow-dot");
+      const lineFill = timelineRef.current.querySelector(".tl-line-fill");
+      const glowDot = timelineRef.current.querySelector(".tl-glow-dot");
 
-      const scrubValue = typeof window !== "undefined" && window.innerWidth >= 768 ? 0.05 : 0.2;
+      const scrubValue = 0.3;
 
+      // Color gradient line fills exactly as the user scrolls through the timeline
       if (lineFill) {
         gsap.fromTo(
           lineFill,
@@ -124,9 +126,9 @@ export function JourneySection() {
             height: "100%",
             ease: "none",
             scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top 75%",
-              end: "bottom 25%",
+              trigger: timelineRef.current,
+              start: "top 65%",
+              end: "bottom 65%",
               scrub: scrubValue,
               invalidateOnRefresh: true,
             },
@@ -134,6 +136,7 @@ export function JourneySection() {
         );
       }
 
+      // Glow dot tracks down the timeline and ends exactly at the bottom of the last milestone
       if (glowDot) {
         gsap.fromTo(
           glowDot,
@@ -142,9 +145,9 @@ export function JourneySection() {
             top: "100%",
             ease: "none",
             scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top 75%",
-              end: "bottom 25%",
+              trigger: timelineRef.current,
+              start: "top 65%",
+              end: "bottom 65%",
               scrub: scrubValue,
               invalidateOnRefresh: true,
             },
@@ -152,7 +155,7 @@ export function JourneySection() {
         );
       }
     },
-    { scope: sectionRef }
+    { scope: timelineRef }
   );
 
   return (
@@ -171,30 +174,31 @@ export function JourneySection() {
       </div>
 
       {/* Timeline */}
-      <div className="relative max-w-4xl mx-auto px-6 pb-16">
+      <div ref={timelineRef} className="relative max-w-4xl mx-auto px-6 pb-16">
         {/* Vertical line — base (gray) */}
         <div
           className="absolute top-0 bottom-0 w-px bg-border left-5 md:left-1/2 -translate-x-1/2"
         />
 
-        {/* Vertical line — color fill (grows on scroll) */}
+        {/* Vertical line — color fill (grows on scroll with neon glow) */}
         <div
-          className="tl-line-fill absolute top-0 w-px origin-top left-5 md:left-1/2 -translate-x-1/2"
+          className="tl-line-fill absolute top-0 w-[2px] origin-top left-5 md:left-1/2 -translate-x-1/2 rounded-full"
           style={{
             height: "0%",
             background: "linear-gradient(to bottom, var(--nebula-blue), var(--nebula-purple), var(--nebula-pink))",
+            filter: "drop-shadow(0 0 8px rgba(59, 130, 246, 0.8))",
           }}
         />
 
-        {/* Glow dot at the tip of the fill */}
+        {/* Vibrant Glow dot at the tip of the fill */}
         <div
           className="tl-glow-dot absolute left-5 md:left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none rounded-full"
           style={{
             top: "0%",
-            width: "10px",
-            height: "10px",
+            width: "14px",
+            height: "14px",
             background: "var(--primary)",
-            boxShadow: "0 0 14px 5px rgba(59, 130, 246, 0.5)",
+            boxShadow: "0 0 18px 6px rgba(59, 130, 246, 0.85), 0 0 32px 12px rgba(124, 58, 237, 0.6)",
           }}
         />
 
