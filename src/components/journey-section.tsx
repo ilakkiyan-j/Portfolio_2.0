@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 interface Milestone {
   year: string;
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   highlight?: boolean;
   logoUrl?: string;
   icon: React.ReactNode;
@@ -21,12 +21,26 @@ interface Milestone {
 
 const MILESTONES: Milestone[] = [
   {
-    year: "Jul 2026 – Present",
-    title: "Independent Freelancer",
-    description: "Designing & developing high-converting landing pages, custom portfolios, brand logos, and business cards for clients.",
+    year: "Jul 2026 – Aug 2026",
+    title: "AI Intern | AICTE — IBM SkillsBuild — 1M1B",
+    description: (
+      <ul className="list-disc pl-4 space-y-1 mt-1 text-muted-foreground text-xs md:text-sm">
+        <li>Selected for a competitive 6-week virtual AI internship organized by 1M1B and co-certified by AICTE and IBM SkillsBuild.</li>
+        <li>Completing intensive technical onboarding focused on Large Language Models (LLMs), IBM Granite, and Retrieval-Augmented Generation (RAG) architectures.</li>
+        <li>Preparing to architect and deploy Agentic AI solutions for sustainability challenges in upcoming project phases.</li>
+      </ul>
+    ),
     highlight: true,
     icon: <Sparkles size={14} />,
     side: "right",
+  },
+  {
+    year: "Jul 2026",
+    title: "Agentic AI Certified Foundations Associate",
+    description: "Oracle Certified Foundations Associate credential in Agentic AI and foundation models.",
+    highlight: true,
+    icon: <Award size={14} />,
+    side: "left",
   },
   {
     year: "2026",
@@ -34,41 +48,34 @@ const MILESTONES: Milestone[] = [
     description: "Offline AI assistant combining local LLM inference, voice interaction, and desktop automation.",
     highlight: true,
     icon: <Briefcase size={14} />,
-    side: "left",
+    side: "right",
   },
   {
     year: "2026",
     title: "ICIRCA 2026 Research",
     description: "Co-authored and presented research on Digital-Twin-Driven Health Data Orchestration.",
     icon: <BookOpen size={14} />,
-    side: "right",
+    side: "left",
   },
   {
     year: "2026",
     title: "Medorc Healthcare",
     description: "Scalable backend architecture and RASA-powered healthcare assistant.",
     icon: <Briefcase size={14} />,
-    side: "left",
+    side: "right",
   },
   {
     year: "2026",
     title: "Datacom Software Dev",
     description: "Software Engineering Job Simulation completed.",
     icon: <Briefcase size={14} />,
-    side: "right",
-  },
-  {
-    year: "2025",
-    title: "Software Engineer Cert",
-    description: "HackerRank Software Engineer certification.",
-    icon: <Award size={14} />,
     side: "left",
   },
   {
-    year: "2025",
-    title: "Agile Project Management",
-    description: "HP LIFE certification in Agile Project Management.",
-    icon: <GraduationCap size={14} />,
+    year: "Jul 2025",
+    title: "Software Engineer",
+    description: "HackerRank Software Engineer certification.",
+    icon: <Award size={14} />,
     side: "right",
   },
   {
@@ -88,11 +95,18 @@ const MILESTONES: Milestone[] = [
     side: "right",
   },
   {
+    year: "Nov 2024",
+    title: "The Complete 2024 Web Development Bootcamp",
+    description: "Udemy certification covering full-stack web development.",
+    icon: <GraduationCap size={14} />,
+    side: "left",
+  },
+  {
     year: "2024",
     title: "Nexaid",
     description: "Built emergency response assistance application.",
     icon: <Briefcase size={14} />,
-    side: "left",
+    side: "right",
   },
 ];
 
@@ -251,9 +265,9 @@ export function JourneySection() {
                       </span>
                     )}
                   </h4>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                  <div className="text-xs md:text-sm text-muted-foreground leading-relaxed">
                     {m.description}
-                  </p>
+                  </div>
                 </div>
               </div>
 

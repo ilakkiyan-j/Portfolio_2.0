@@ -38,26 +38,25 @@ export function HeroNebulaContainer() {
 
   return (
     <div ref={containerRef} className="w-full h-full cursor-grab active:cursor-grabbing">
-      {inView && (
-        <Canvas
-          camera={{ position: [0, 0, 5], fov: 50 }}
-          dpr={[1, 1.5]}
-          gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
-        >
-          <Suspense fallback={null}>
-            <HeroNebula />
-            <OrbitControls
-              enableZoom={false}
-              enablePan={false}
-              autoRotate
-              autoRotateSpeed={0.6}
-              rotateSpeed={0.5}
-              maxPolarAngle={Math.PI / 1.5}
-              minPolarAngle={Math.PI / 3}
-            />
-          </Suspense>
-        </Canvas>
-      )}
+      <Canvas
+        camera={{ position: [0, 0, 5], fov: 50 }}
+        dpr={[1, 1.5]}
+        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+        frameloop={inView ? "always" : "never"}
+      >
+        <Suspense fallback={null}>
+          <HeroNebula />
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+            autoRotate
+            autoRotateSpeed={0.6}
+            rotateSpeed={0.5}
+            maxPolarAngle={Math.PI / 1.5}
+            minPolarAngle={Math.PI / 3}
+          />
+        </Suspense>
+      </Canvas>
     </div>
   );
 }

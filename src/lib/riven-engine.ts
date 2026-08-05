@@ -43,23 +43,30 @@ export function generateKnowledgeEngineResponse(prompt: string): string {
 
   // Freelance / Current Work Query
   if (
+    query.includes("currently doing") ||
+    query.includes("current work") ||
+    query.includes("internship") ||
+    query.includes("intern") ||
+    query.includes("now")
+  ) {
+    return `Ilakkiyan recently completed an **AI Internship** at **AICTE — IBM SkillsBuild — 1M1B** (Jul 2026 – Aug 2026) and is actively seeking full-time **Software Engineering & AI Engineer** roles.
+
+During this internship, his focus included:
+• **Large Language Models (LLMs) & IBM Granite**
+• **Retrieval-Augmented Generation (RAG) architectures**
+• **Agentic AI solutions for sustainability challenges**
+
+If you'd like to discuss full-time software engineering or AI roles, reach out at **[ilakkiyanj03@gmail.com](mailto:ilakkiyanj03@gmail.com)**!`;
+  }
+
+  if (
     query.includes("freelance") ||
     query.includes("freelancing") ||
     query.includes("landing page") ||
     query.includes("logo") ||
-    query.includes("business card") ||
-    query.includes("currently doing") ||
-    query.includes("current work") ||
-    query.includes("now")
+    query.includes("business card")
   ) {
-    return `Ilakkiyan is currently working as an **Independent Freelancer** (Jul 2026 – Present) while actively seeking full-time **Software Engineering & AI Engineer** roles.
-
-As a freelancer, he specializes in:
-• **High-Converting Landing Pages & Custom Portfolios** (React, Next.js, Tailwind)
-• **Brand Logo Design & Identity**
-• **Business Card & Print Collateral Design**
-
-If you'd like to hire him for freelance work or discuss full-time engineering roles, reach out at **[ilakkiyanj03@gmail.com](mailto:ilakkiyanj03@gmail.com)**!`;
+    return `Ilakkiyan has experience doing freelance design and development, creating custom portfolios, landing pages, logos, and business cards, but is currently focused on securing full-time **Software Engineering & AI Engineer** roles.`;
   }
 
   // 1. Frontend Role Query (handles "Why should I hire him for a frotend role", etc.)

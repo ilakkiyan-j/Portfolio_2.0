@@ -53,7 +53,7 @@ export function HeroSection() {
               <span className="text-foreground font-medium">Open to Full-Time Roles</span>
               <span className="text-muted-foreground/40">•</span>
               <div className="flex items-center gap-1.5 text-muted-foreground">
-                <span>Independent Freelancer</span>
+                <span>AI Intern @ IBM SkillsBuild</span>
               </div>
             </motion.div>
 

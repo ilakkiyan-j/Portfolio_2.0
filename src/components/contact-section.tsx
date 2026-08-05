@@ -291,7 +291,7 @@ export function ContactSection() {
                 ILAKKIYAN J
               </span>
               <span className="text-xs text-muted-foreground">
-                Full-Stack × AI Engineer · AI Product Builder · Independent Freelancer
+                Full-Stack × AI Engineer · IBM SkillsBuild Intern
               </span>
             </div>
 
