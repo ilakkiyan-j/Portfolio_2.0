@@ -20,6 +20,9 @@ function TiltCard({
   const cardRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (typeof window !== "undefined" && !window.matchMedia("(pointer: fine)").matches) {
+      return;
+    }
     const card = cardRef.current;
     if (!card) return;
     const rect = card.getBoundingClientRect();
@@ -49,17 +52,17 @@ function SofiMockup() {
   return (
     <TiltCard className="relative aspect-[4/3] rounded-2xl border border-border bg-surface-secondary overflow-hidden group">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent-secondary/5 opacity-40 group-hover:opacity-80 transition-opacity" />
-      <div className="relative w-full h-full flex items-center justify-center p-6">
+      <div className="relative w-full h-full flex items-center justify-center p-3 sm:p-6">
         <div className="w-full max-w-md bg-background border border-border rounded-xl shadow-2xl overflow-hidden">
           {/* Title bar */}
-          <div className="h-9 border-b border-border bg-surface-secondary flex items-center px-3 gap-1.5">
+          <div className="h-8 sm:h-9 border-b border-border bg-surface-secondary flex items-center px-3 gap-1.5">
             <div className="w-2.5 h-2.5 rounded-full bg-rose-500" />
             <div className="w-2.5 h-2.5 rounded-full bg-amber-500" />
             <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
             <span className="ml-3 text-[10px] font-mono text-muted-foreground">sofi-assistant</span>
           </div>
           {/* Terminal body */}
-          <div className="p-4 font-mono text-xs leading-relaxed space-y-2 min-h-[200px]">
+          <div className="p-3 sm:p-4 font-mono text-[11px] sm:text-xs leading-relaxed space-y-1.5 sm:space-y-2 min-h-[160px] sm:min-h-[200px]">
             <div className="flex items-center gap-1.5 text-primary">
               <Terminal size={12} />
               <span>[System] Initializing local LLM engine...</span>
@@ -68,9 +71,9 @@ function SofiMockup() {
             <div className="text-muted-foreground">&gt; ChromaDB connected</div>
             <div className="text-muted-foreground">&gt; Vosk voice engine ready</div>
             <div className="border-t border-border pt-2 mt-2">
-              <div className="text-foreground">&gt; &quot;Sofi, summarize my emails and draft a reply&quot;</div>
+              <div className="text-foreground">&gt; &quot;Sofi, summarize my emails&quot;</div>
               <div className="text-primary mt-1 animate-pulse">
-                &gt; Sofi: &quot;Found 3 new emails. Drafted response to urgent one.&quot;
+                &gt; Sofi: &quot;Drafted response to urgent email.&quot;
               </div>
             </div>
           </div>
@@ -84,27 +87,27 @@ function MedorcMockup() {
   return (
     <TiltCard className="relative aspect-[4/3] rounded-2xl border border-border bg-surface-secondary overflow-hidden group">
       <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 to-accent-secondary/5 opacity-40 group-hover:opacity-80 transition-opacity" />
-      <div className="relative w-full h-full flex items-center justify-center p-6">
+      <div className="relative w-full h-full flex items-center justify-center p-3 sm:p-6">
         <div className="relative w-full max-w-sm">
           {/* Node network visualization */}
-          <div className="relative h-48 flex items-center justify-center">
+          <div className="relative h-40 sm:h-48 flex items-center justify-center">
             {/* Center node */}
-            <div className="w-16 h-16 rounded-full border-2 border-primary/40 bg-primary/10 flex items-center justify-center z-10 animate-pulse">
-              <span className="text-xs font-bold text-primary">API</span>
+            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-primary/40 bg-primary/10 flex items-center justify-center z-10 animate-pulse">
+              <span className="text-[10px] sm:text-xs font-bold text-primary">API</span>
             </div>
             {/* Orbital nodes */}
             {["Auth", "DB", "AI", "UI"].map((label, i) => {
               const angle = (i * Math.PI * 2) / 4 - Math.PI / 4;
-              const radius = 80;
+              const radius = 65;
               const x = Math.cos(angle) * radius;
               const y = Math.sin(angle) * radius;
               return (
                 <div
                   key={label}
-                  className="absolute w-10 h-10 rounded-full border border-border bg-surface flex items-center justify-center text-[10px] font-semibold text-muted-foreground"
+                  className="absolute w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-border bg-surface flex items-center justify-center text-[9px] sm:text-[10px] font-semibold text-muted-foreground"
                   style={{
-                    left: `calc(50% + ${x}px - 20px)`,
-                    top: `calc(50% + ${y}px - 20px)`,
+                    left: `calc(50% + ${x}px - 16px)`,
+                    top: `calc(50% + ${y}px - 16px)`,
                   }}
                 >
                   {label}
@@ -115,8 +118,8 @@ function MedorcMockup() {
             <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 300 192">
               {["Auth", "DB", "AI", "UI"].map((_, i) => {
                 const angle = (i * Math.PI * 2) / 4 - Math.PI / 4;
-                const x2 = 150 + Math.cos(angle) * 80;
-                const y2 = 96 + Math.sin(angle) * 80;
+                const x2 = 150 + Math.cos(angle) * 65;
+                const y2 = 96 + Math.sin(angle) * 65;
                 return (
                   <line
                     key={i}
@@ -128,7 +131,7 @@ function MedorcMockup() {
             </svg>
           </div>
           {/* Pipeline label */}
-          <div className="flex items-center justify-center gap-3 mt-4 font-mono text-[10px] text-muted-foreground">
+          <div className="flex items-center justify-center gap-2 sm:gap-3 mt-2 sm:mt-4 font-mono text-[9px] sm:text-[10px] text-muted-foreground">
             <span>PROJECT</span>
             <span className="w-px h-3 bg-border" />
             <span>RESEARCH</span>

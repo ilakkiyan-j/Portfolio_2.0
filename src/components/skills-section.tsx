@@ -235,12 +235,12 @@ export function SkillsSection() {
         </motion.div>
 
         {/* Category tabs */}
-        <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-8">
+        <div className="flex overflow-x-auto no-scrollbar flex-nowrap md:flex-wrap justify-start md:justify-start gap-2 mb-8 pb-2 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all cursor-pointer ${
+              className={`px-3.5 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer shrink-0 ${
                 active === cat
                   ? "bg-foreground text-background shadow-lg scale-105"
                   : "bg-surface-secondary border border-border text-muted-foreground hover:text-foreground hover:border-primary/30"
@@ -261,7 +261,7 @@ export function SkillsSection() {
           <CoreCanvas />
           <motion.div
             layout={false}
-            className="relative z-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"
+            className="relative z-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2.5 sm:gap-3"
           >
             <AnimatePresence mode="popLayout" initial={false}>
               {filtered.map((skill) => (

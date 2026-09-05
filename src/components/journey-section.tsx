@@ -188,15 +188,15 @@ export function JourneySection() {
       </div>
 
       {/* Timeline */}
-      <div ref={timelineRef} className="relative max-w-4xl mx-auto px-6 pb-16">
+      <div ref={timelineRef} className="relative max-w-4xl mx-auto px-4 sm:px-6 pb-16">
         {/* Vertical line — base (gray) */}
         <div
-          className="absolute top-0 bottom-0 w-px bg-border left-5 md:left-1/2 -translate-x-1/2"
+          className="absolute top-0 bottom-0 w-px bg-border left-4 sm:left-5 md:left-1/2 -translate-x-1/2"
         />
 
         {/* Vertical line — color fill (grows on scroll with neon glow) */}
         <div
-          className="tl-line-fill absolute top-0 w-[2px] origin-top left-5 md:left-1/2 -translate-x-1/2 rounded-full"
+          className="tl-line-fill absolute top-0 w-[2px] origin-top left-4 sm:left-5 md:left-1/2 -translate-x-1/2 rounded-full"
           style={{
             height: "0%",
             background: "linear-gradient(to bottom, var(--nebula-blue), var(--nebula-purple), var(--nebula-pink))",
@@ -206,7 +206,7 @@ export function JourneySection() {
 
         {/* Vibrant Glow dot at the tip of the fill */}
         <div
-          className="tl-glow-dot absolute left-5 md:left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none rounded-full"
+          className="tl-glow-dot absolute left-4 sm:left-5 md:left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none rounded-full"
           style={{
             top: "0%",
             width: "10px",
@@ -216,7 +216,7 @@ export function JourneySection() {
           }}
         />
 
-        {/* Milestone rows — IntersectionObserver powered via Framer Motion for 100% reliable entry */}
+        {/* Milestone rows */}
         {MILESTONES.map((m, i) => {
           const isLeft = m.side === "left";
 
@@ -227,14 +227,14 @@ export function JourneySection() {
               whileInView={{ opacity: 1, y: 0, x: 0 }}
               viewport={{ once: true, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className={`tl-row relative flex flex-col md:flex-row items-start md:items-center mb-10 last:mb-0 ${
+              className={`tl-row relative flex flex-col md:flex-row items-start md:items-center mb-8 sm:mb-10 last:mb-0 ${
                 isLeft ? "tl-left" : ""
               }`}
             >
               {/* Card Container */}
-              <div className={`w-[calc(100%-3rem)] ml-auto md:ml-0 md:w-[calc(50%-1.5rem)] ${isLeft ? "md:text-right" : "md:order-3 md:text-left"}`}>
+              <div className={`w-[calc(100%-2.25rem)] sm:w-[calc(100%-3rem)] ml-auto md:ml-0 md:w-[calc(50%-1.5rem)] ${isLeft ? "md:text-right" : "md:order-3 md:text-left"}`}>
                 <div
-                  className={`inline-block text-left p-4.5 rounded-xl border transition-all duration-300 w-full ${
+                  className={`inline-block text-left p-3.5 sm:p-4.5 rounded-xl border transition-all duration-300 w-full ${
                     isLeft ? "md:ml-auto" : ""
                   } ${
                     m.highlight
@@ -242,7 +242,7 @@ export function JourneySection() {
                       : "border-border/50 bg-surface/60 hover:border-border"
                   }`}
                 >
-                  <div className="flex items-center gap-2 mb-2">
+                  <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
                     <span
                       className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider ${
                         m.highlight
@@ -257,7 +257,7 @@ export function JourneySection() {
                       <img src={m.logoUrl} alt="Logo" className="h-4 w-auto object-contain rounded-sm" />
                     )}
                   </div>
-                  <h4 className="text-sm md:text-base font-bold text-foreground mb-1 leading-tight flex items-center gap-1.5 flex-wrap">
+                  <h4 className="text-xs sm:text-sm md:text-base font-bold text-foreground mb-1 leading-tight flex items-center gap-1.5 flex-wrap">
                     {m.title}
                     {m.highlight && (
                       <span className="text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded bg-primary/10 text-primary align-middle">
@@ -272,9 +272,9 @@ export function JourneySection() {
               </div>
 
               {/* Center node */}
-              <div className="absolute left-0 top-3 md:relative md:top-auto md:left-auto w-10 md:w-12 flex justify-center md:order-2 z-10 shrink-0">
+              <div className="absolute left-0 top-3 md:relative md:top-auto md:left-auto w-8 sm:w-10 md:w-12 flex justify-center md:order-2 z-10 shrink-0 -translate-x-1/2 sm:translate-x-0">
                 <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${
+                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center border-2 ${
                     m.highlight
                       ? "bg-primary/20 border-primary text-primary"
                       : "bg-surface border-border text-muted-foreground"
@@ -282,7 +282,7 @@ export function JourneySection() {
                 >
                   {m.logoUrl ? (
                     /* eslint-disable-next-line @next/next/no-img-element */
-                    <img src={m.logoUrl} alt="Logo" className="w-5 h-5 object-contain rounded-full" />
+                    <img src={m.logoUrl} alt="Logo" className="w-4 h-4 sm:w-5 sm:h-5 object-contain rounded-full" />
                   ) : (
                     m.icon
                   )}

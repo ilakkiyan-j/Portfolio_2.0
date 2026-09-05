@@ -157,14 +157,15 @@ export function RivenChat() {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-40 group flex items-center justify-center gap-2.5 bg-surface/80 backdrop-blur-md border border-border px-5 py-3 rounded-full shadow-lg hover:shadow-xl hover:border-primary/50 transition-all hover:scale-105 active:scale-95"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 group flex items-center justify-center gap-2 sm:gap-2.5 bg-surface/90 backdrop-blur-md border border-border px-4 sm:px-5 py-2.5 sm:py-3 rounded-full shadow-lg hover:shadow-xl hover:border-primary/50 transition-all hover:scale-105 active:scale-95 cursor-pointer"
         style={{ display: isOpen ? 'none' : 'flex' }}
+        aria-label="Open Riven AI Assistant"
       >
-        <div className="relative flex items-center justify-center w-5 h-5">
+        <div className="relative flex items-center justify-center w-4 h-4 sm:w-5 sm:h-5">
           <div className="absolute inset-0 bg-primary/30 rounded-full animate-ping"></div>
-          <div className="w-3 h-3 bg-primary rounded-full shadow-[0_0_10px_rgba(37,99,235,0.8)]"></div>
+          <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-primary rounded-full shadow-[0_0_10px_rgba(37,99,235,0.8)]"></div>
         </div>
-        <span className="font-semibold text-sm text-foreground">Ask Riven</span>
+        <span className="font-semibold text-xs sm:text-sm text-foreground">Ask Riven</span>
       </button>
 
       {/* Slide Panel / Modal */}
@@ -175,7 +176,7 @@ export function RivenChat() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-y-0 right-0 z-50 w-full md:w-[460px] bg-background/95 backdrop-blur-2xl border-l border-border shadow-2xl flex flex-col"
+            className="fixed inset-y-0 right-0 z-50 w-full sm:w-[440px] md:w-[460px] h-[100dvh] max-h-[100dvh] bg-background/95 backdrop-blur-2xl border-l border-border shadow-2xl flex flex-col"
           >
             {/* Header */}
             <div className="h-20 border-b border-border flex items-center justify-between px-6 shrink-0">
