@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Trophy, BookOpen, Briefcase, Award, GraduationCap, Sparkles } from "lucide-react";
+import { Trophy, BookOpen, Briefcase, Award, GraduationCap, Sparkles, Users, Network } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,6 +20,33 @@ interface Milestone {
 }
 
 const MILESTONES: Milestone[] = [
+  {
+    year: "Sep 2026",
+    title: "Think41 Tech Event | Forward Deployed Engineering & AI Platforms",
+    description: (
+      <ul className="list-disc pl-4 space-y-1 mt-1 text-muted-foreground text-xs md:text-sm">
+        <li>Explored <strong>Forward Deployed Engineering (FDE)</strong> and how client-embedded engineering teams build real-world AI applications.</li>
+        <li>Gained hands-on experience with Think41 platforms including <strong>Snapcode</strong> (AI code acceleration) and <strong>Recruit41</strong> (AI talent intelligence).</li>
+        <li>Networked with developers and AI enthusiasts during Bengaluru Tech Week.</li>
+      </ul>
+    ),
+    highlight: true,
+    icon: <Users size={14} />,
+    side: "right",
+  },
+  {
+    year: "Sep 2026",
+    title: "Neo4j Graph AI & Knowledge Representation | Bengaluru Tech Week",
+    description: (
+      <ul className="list-disc pl-4 space-y-1 mt-1 text-muted-foreground text-xs md:text-sm">
+        <li>Attended Neo4j workshop on Knowledge Graphs and Graph Databases for modern AI architectures.</li>
+        <li>Explored <strong>Graph RAG</strong> and entity relationships to enhance AI Agent reasoning and context-aware knowledge retrieval.</li>
+      </ul>
+    ),
+    highlight: true,
+    icon: <Network size={14} />,
+    side: "left",
+  },
   {
     year: "Jul 2026 – Aug 2026",
     title: "AI Intern | AICTE — IBM SkillsBuild — 1M1B",
