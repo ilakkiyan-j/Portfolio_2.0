@@ -36,20 +36,20 @@ interface Skill {
 const SKILLS: Skill[] = [
   // AI & ML
   { name: "Agentic AI", slug: "__agentic", category: "AI & ML", hasIcon: true },
-  { name: "Amazon Bedrock", slug: "__bedrock", category: "AI & ML", hasIcon: true },
+  { name: "Amazon Bedrock", slug: "/icons/aws-amazon-bedrock.svg", category: "AI & ML", hasIcon: true },
   { name: "RAG", slug: "__rag", category: "AI & ML", hasIcon: true },
   { name: "LLMs", slug: "__llm", category: "AI & ML", hasIcon: true },
-  { name: "Ollama", slug: "https://raw.githubusercontent.com/ollama/ollama/main/docs/ollama-logo.svg", category: "AI & ML", hasIcon: true },
+  { name: "Ollama", slug: "/icons/ollama.svg", category: "AI & ML", hasIcon: true },
   { name: "RASA", slug: "https://raw.githubusercontent.com/RasaHQ/brand/main/logos/horizontal/svg/rasa_horizontal_logo_purple.svg", category: "AI & ML", hasIcon: true },
   { name: "Prompt Engineering", slug: "__prompt", category: "AI & ML", hasIcon: true },
   { name: "ChromaDB", slug: "https://raw.githubusercontent.com/chroma-core/chroma/main/docs/mintlify/images/light-logo.svg", category: "AI & ML", hasIcon: true },
 
   // Cloud & DevOps
-  { name: "AWS Amplify", slug: "__amplify", category: "Cloud & DevOps", hasIcon: true },
-  { name: "Amazon S3", slug: "__s3", category: "Cloud & DevOps", hasIcon: true },
-  { name: "AWS Cognito", slug: "__cognito", category: "Cloud & DevOps", hasIcon: true },
+  { name: "AWS Amplify", slug: "/icons/aws-amplify.svg", category: "Cloud & DevOps", hasIcon: true },
+  { name: "Amazon S3", slug: "/icons/amazon-s3.svg", category: "Cloud & DevOps", hasIcon: true },
+  { name: "AWS Cognito", slug: "/icons/aws-cognito.svg", category: "Cloud & DevOps", hasIcon: true },
   { name: "Vercel", slug: "vercel", category: "Cloud & DevOps", hasIcon: true },
-  { name: "Render", slug: "__render", category: "Cloud & DevOps", hasIcon: true },
+  { name: "Render", slug: "/icons/render.svg", category: "Cloud & DevOps", hasIcon: true },
   { name: "Docker", slug: "docker", category: "Cloud & DevOps", hasIcon: true },
 
   // Backend & Languages
@@ -72,7 +72,7 @@ const SKILLS: Skill[] = [
 
   // Databases
   { name: "PostgreSQL", slug: "postgresql", category: "Databases", hasIcon: true },
-  { name: "DynamoDB", slug: "__dynamodb", category: "Databases", hasIcon: true },
+  { name: "DynamoDB", slug: "/icons/dynamodb.svg", category: "Databases", hasIcon: true },
   { name: "MySQL", slug: "mysql", category: "Databases", hasIcon: true },
 
   // Tools
@@ -165,7 +165,7 @@ function SkillLogo({ slug, name, size = 28 }: { slug: string; name: string; size
     );
   }
 
-  if (slug.startsWith("http")) {
+  if (slug.startsWith("/") || slug.startsWith("http")) {
     return (
       /* eslint-disable-next-line @next/next/no-img-element */
       <img

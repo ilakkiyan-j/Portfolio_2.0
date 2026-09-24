@@ -413,7 +413,7 @@ export function ProjectLab() {
               {/* CTA Buttons */}
               <div className="flex flex-wrap items-center gap-3 mt-1">
                 <a
-                  href="https://github.com/ilakkiyan-j"
+                  href="https://main.dhbgp6utbowvg.amplifyapp.com/"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-1.5 bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 active:scale-95"
@@ -421,12 +421,12 @@ export function ProjectLab() {
                   Live Demo <ExternalLink size={14} />
                 </a>
                 <a
-                  href="https://github.com/ilakkiyan-j"
+                  href="https://github.com/ilakkiyan-j/Alxo"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-1.5 glass-card px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 active:scale-95"
                 >
-                  <GithubIcon width="14" height="14" /> Architecture
+                  <GithubIcon width="14" height="14" /> Architecture &amp; Code
                 </a>
                 <button
                   onClick={() => {
@@ -511,7 +511,7 @@ export function ProjectLab() {
 
               <div className="flex flex-wrap items-center gap-3 mt-1">
                 <a
-                  href="https://github.com/Medorc/medorc-backend"
+                  href="https://medorc-frontend.vercel.app/"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-1.5 bg-foreground text-background px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 active:scale-95"
@@ -519,10 +519,18 @@ export function ProjectLab() {
                   Live Demo <ArrowRight size={14} />
                 </a>
                 <a
+                  href="https://github.com/Medorc"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-1.5 glass-card px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 active:scale-95"
+                >
+                  <GithubIcon width="14" height="14" /> GitHub
+                </a>
+                <a
                   href="#research"
                   className="flex items-center gap-1.5 glass-card px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 active:scale-95"
                 >
-                  <Layers size={14} /> View Paper
+                  <Layers size={14} /> Paper
                 </a>
                 <button
                   onClick={() => {
@@ -555,7 +563,7 @@ export function ProjectLab() {
                 </div>
                 <h4 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">ReServe AI</h4>
                 <p className="text-sm font-medium text-muted-foreground mb-3">
-                  AI Platform for Food Surplus Forecasting &amp; Redistribution
+                  Food Surplus Forecasting &amp; Redistribution Platform
                 </p>
                 <p className="text-xs text-muted-foreground leading-relaxed mb-4">
                   Built during an applied AI sustainability internship. Leveraged prompt engineering, NLP, RAG,
@@ -569,8 +577,28 @@ export function ProjectLab() {
                   ))}
                 </div>
               </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-primary pt-3 border-t border-border/60">
-                <CheckCircle2 size={14} /> Applied AI Internship Project Completed
+              <div className="flex items-center justify-between pt-3 border-t border-border/60">
+                <div className="flex items-center gap-2">
+                  <a
+                    href="https://re-serve-ai.vercel.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold bg-foreground text-background px-3.5 py-1.5 rounded-full hover:scale-105 active:scale-95 transition-all"
+                  >
+                    Live Demo <ExternalLink size={12} />
+                  </a>
+                  <a
+                    href="https://github.com/ilakkiyan-j/ReServe-ai"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold glass-card px-3.5 py-1.5 rounded-full hover:scale-105 active:scale-95 transition-all"
+                  >
+                    <GithubIcon width="12" height="12" /> GitHub
+                  </a>
+                </div>
+                <span className="text-xs text-emerald-500 font-semibold flex items-center gap-1">
+                  <CheckCircle2 size={13} /> Completed
+                </span>
               </div>
             </div>
 

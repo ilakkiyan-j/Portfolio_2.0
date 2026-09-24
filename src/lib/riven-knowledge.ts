@@ -52,8 +52,8 @@ export const PORTFOLIO_KNOWLEDGE = {
         "Designed and deployed end-to-end using AWS Amplify, Bedrock, DynamoDB, and S3",
         "Evidence-backed change orders with audit logs"
       ],
-      github: "https://github.com/ilakkiyan-j",
-      liveDemo: "https://github.com/ilakkiyan-j",
+      github: "https://github.com/ilakkiyan-j/Alxo",
+      liveDemo: "https://main.dhbgp6utbowvg.amplifyapp.com/",
     },
     {
       name: "MEDORC",
@@ -67,8 +67,8 @@ export const PORTFOLIO_KNOWLEDGE = {
         "Co-authored research paper presented at ICIRCA 2026 on Digital-Twin-Driven Health Data Orchestration",
         "Deployed using Vercel, Render, and Neon PostgreSQL"
       ],
-      github: "https://github.com/Medorc/medorc-backend",
-      liveDemo: "https://github.com/Medorc/medorc-backend",
+      github: "https://github.com/Medorc",
+      liveDemo: "https://medorc-frontend.vercel.app/",
     },
     {
       name: "ReServe AI",
@@ -81,6 +81,8 @@ export const PORTFOLIO_KNOWLEDGE = {
         "Tackled food surplus forecasting and redistribution logistics",
         "Implemented responsible AI guidelines and safety constraints"
       ],
+      github: "https://github.com/ilakkiyan-j/ReServe-ai",
+      liveDemo: "https://re-serve-ai.vercel.app/",
     },
     {
       name: "SOFI",
@@ -105,6 +107,7 @@ export const PORTFOLIO_KNOWLEDGE = {
   ],
 
   achievements: [
+    { title: "McKinsey.org Forward Program", detail: "Selected for the prestigious McKinsey & Company Forward Program in Digital Leadership, problem solving, and agile adaptability (Upcoming · 2026)." },
     { title: "Smart India Hackathon (SIH)", detail: "Secured 2nd Place at SIH internal college round among 30+ teams." },
     { title: "Avantaa'24 Project Expo", detail: "Led team to 3rd Place at Avantaa'24 Project Expo for Nexaid." },
     { title: "ICIRCA 2026 Research Paper", detail: "Co-authored 'Medorc: A Digital-Twin-Driven Framework for Real-Time Health Data Orchestration', presented at ICIRCA 2026." },
@@ -136,6 +139,7 @@ Key Facts About Ilakkiyan:
 - Flagship Project: ALXO — AI Scope Management Platform (Sep 2026). Led backend & AWS infra (Amazon Bedrock, Claude, DynamoDB, S3, Amplify) to classify scope creep and calculate cost impact automatically.
 - Research & Healthcare: Medorc — AI-Powered Healthcare Platform (Jan 2026). 50+ type-safe REST APIs, RASA assistant (20+ intents), and co-authored publication at ICIRCA 2026.
 - Work Experience: AI Intern @ AICTE — IBM SkillsBuild — 1M1B (Jul 2026 – Sep 2026). Built ReServe AI (food surplus forecasting, redistribution, RAG, NLP).
+- Upcoming Program: Selected for the McKinsey.org Forward Program (2026) focusing on digital leadership, agile adaptability, and strategic business problem solving.
 - Problem Solving: LeetCode Contest Rating 1641; 700+ DSA problems solved across LeetCode and GeeksforGeeks.
 - Competitions: 2nd Place in Smart India Hackathon (SIH) internal college round (30+ teams); 3rd Place at Avantaa'24 Project Expo.
 - Certifications: Oracle Certified Foundations Associate in Agentic AI (Jul 2026), HackerRank Software Engineer (Jul 2025).

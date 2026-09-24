@@ -21,6 +21,19 @@ interface Milestone {
 
 const MILESTONES: Milestone[] = [
   {
+    year: "Upcoming · 2026",
+    title: "McKinsey.org Forward Program | Digital Leadership & Strategy",
+    description: (
+      <ul className="list-disc pl-4 space-y-1 mt-1 text-muted-foreground text-xs md:text-sm">
+        <li>Selected for the prestigious <strong>McKinsey &amp; Company Forward Program</strong>.</li>
+        <li>Focusing on future-ready digital leadership, critical thinking, business problem solving, and agile adaptability.</li>
+      </ul>
+    ),
+    highlight: true,
+    icon: <Sparkles size={14} />,
+    side: "left",
+  },
+  {
     year: "Sep 2026",
     title: "ALXO — AI Scope Management Platform",
     description: (

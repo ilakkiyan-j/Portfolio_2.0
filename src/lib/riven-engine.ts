@@ -103,9 +103,10 @@ A local desktop assistant built with React, Electron, FastAPI, and Python:
   }
 
   // 5. Certifications & Hackathons
-  if (query.includes("certification") || query.includes("certificate") || query.includes("oracle") || query.includes("hackerrank") || query.includes("hackathon") || query.includes("sih")) {
-    return `**Certifications & Competitive Achievements:**
+  if (query.includes("certification") || query.includes("certificate") || query.includes("oracle") || query.includes("hackerrank") || query.includes("hackathon") || query.includes("sih") || query.includes("mckinsey") || query.includes("forward")) {
+    return `**Certifications, Honors & Upcoming Programs:**
 
+• **McKinsey.org Forward Program** (Upcoming · 2026): Selected for McKinsey & Company's flagship digital leadership, problem-solving, and adaptability program.
 • **Oracle Certified**: *Agentic AI Certified Foundations Associate* (Jul 2026) — expertise in foundation models, agentic workflows, and autonomous systems.
 • **HackerRank**: *Software Engineer Certified* (Jul 2025).
 • **Udemy**: *The Complete 2024 Web Development Bootcamp* (Nov 2024).
