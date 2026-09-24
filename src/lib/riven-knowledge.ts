@@ -1,22 +1,31 @@
 export const PORTFOLIO_KNOWLEDGE = {
   name: "Ilakkiyan J",
-  title: "Full-Stack × AI Engineer · IBM SkillsBuild Intern",
-  location: "India",
+  title: "Full-Stack & Agentic AI Engineer · AWS & Bedrock Builder",
+  location: "Thiruvarur, Tamil Nadu, India",
   email: "ilakkiyanj03@gmail.com",
+  phone: "+91 9003723837",
+  website: "https://ilakkiyan.tech",
   github: "https://github.com/ilakkiyan-j",
   linkedin: "https://www.linkedin.com/in/ilakkiyan-j",
   resumeUrl: "https://drive.google.com/file/d/1NCUfrOI0J7Ymv0dxNaBgu_C73cklmRvU/view?usp=drive_link",
-  
+
+  education: {
+    institution: "Karpagam College of Engineering, Coimbatore, Tamil Nadu",
+    degree: "Bachelor of Engineering in Computer Science and Design",
+    cgpa: "8.5 / 10",
+    graduationDate: "Apr 2026",
+  },
+
   status: "Open to Full-Time Roles",
-  currentRole: "AI Intern @ AICTE — IBM SkillsBuild — 1M1B (Jul 2026 – Aug 2026)",
-  internshipFocus: [
-    "Large Language Models (LLMs) & IBM Granite",
-    "Retrieval-Augmented Generation (RAG) architectures",
-    "Agentic AI solutions for sustainability challenges"
+  currentRole: "AI Intern @ AICTE — IBM SkillsBuild — 1M1B (Jul 2026 – Sep 2026)",
+  internshipHighlights: [
+    "Completed an Applied AI internship focused on AI for sustainability.",
+    "Built ReServe AI, an AI platform for food surplus forecasting, redistribution, and food safety assistance.",
+    "Applied prompt engineering, NLP, RAG, and responsible AI techniques.",
   ],
-  
-  bio: "Computer Science and Design graduate who enjoys building complete products — from intuitive interfaces and scalable backends to AI-powered applications that solve real problems. Recently worked as an AI Intern at IBM SkillsBuild/1M1B.",
-  
+
+  bio: "Computer Science and Design engineer who builds complete systems — from modern full-stack web applications and scalable AWS cloud architectures to Agentic AI platforms and LLM workflows that solve high-impact real-world problems.",
+
   metrics: {
     dsaSolved: "700+",
     leetcodeRating: 1641,
@@ -25,12 +34,54 @@ export const PORTFOLIO_KNOWLEDGE = {
   },
 
   focusAreas: [
-    { label: "AI Systems", desc: "LLMs, RAG, NLU, Local Models, Autonomous Agents" },
-    { label: "Backend Engineering", desc: "Scalable APIs, Databases, Authentication, Microservices" },
-    { label: "Full-Stack Development", desc: "UI to Infrastructure, Next.js, React, Tailwind, Three.js" },
+    { label: "Agentic AI", desc: "Amazon Bedrock, LLMs, RAG, Multi-Agent Systems" },
+    { label: "Cloud & Backend", desc: "AWS Amplify, DynamoDB, S3, FastAPI, Express.js" },
+    { label: "Full-Stack Development", desc: "Next.js, TypeScript, React, Tailwind CSS" },
   ],
 
   projects: [
+    {
+      name: "ALXO",
+      tagline: "AI Scope Management & Change Order Platform",
+      status: "Flagship Platform · Sep 2026",
+      description: "Led backend architecture and AWS infrastructure for an enterprise AI platform that monitors project conversations, classifies scope creep using Amazon Bedrock Claude, and generates evidence-backed change orders with deterministic cost-impact calculations.",
+      techStack: ["Next.js", "TypeScript", "Amazon Bedrock", "DynamoDB", "AWS S3", "AWS Amplify"],
+      highlights: [
+        "Bedrock Claude-based scope creep classification from project conversations",
+        "Deterministic cost-impact calculations & automated change order drafting",
+        "Designed and deployed end-to-end using AWS Amplify, Bedrock, DynamoDB, and S3",
+        "Evidence-backed change orders with audit logs"
+      ],
+      github: "https://github.com/ilakkiyan-j",
+      liveDemo: "https://github.com/ilakkiyan-j",
+    },
+    {
+      name: "MEDORC",
+      tagline: "AI-Powered Healthcare Platform & Digital Twin",
+      status: "Published Research · Jan 2026",
+      description: "A secure healthcare platform combining scalable backend architecture, role-based access control, and an intelligent RASA-powered clinical assistant.",
+      techStack: ["TypeScript", "Express.js", "Prisma", "PostgreSQL", "JWT", "RASA", "Vercel", "Render"],
+      highlights: [
+        "Architected 50+ type-safe REST APIs with role-based JWT authentication",
+        "Built a RASA healthcare assistant with 20+ intents and 10+ custom entities",
+        "Co-authored research paper presented at ICIRCA 2026 on Digital-Twin-Driven Health Data Orchestration",
+        "Deployed using Vercel, Render, and Neon PostgreSQL"
+      ],
+      github: "https://github.com/Medorc/medorc-backend",
+      liveDemo: "https://github.com/Medorc/medorc-backend",
+    },
+    {
+      name: "ReServe AI",
+      tagline: "Food Surplus Forecasting & Redistribution Platform",
+      status: "IBM SkillsBuild Internship · Jul–Sep 2026",
+      description: "An AI sustainability platform built during the AICTE — IBM SkillsBuild — 1M1B internship to forecast food surplus and assist food safety redistribution.",
+      techStack: ["Python", "NLP", "RAG", "Prompt Engineering", "IBM Granite", "Responsible AI"],
+      highlights: [
+        "Applied prompt engineering, NLP, and RAG architectures",
+        "Tackled food surplus forecasting and redistribution logistics",
+        "Implemented responsible AI guidelines and safety constraints"
+      ],
+    },
     {
       name: "SOFI",
       tagline: "Offline AI Desktop Assistant",
@@ -39,66 +90,58 @@ export const PORTFOLIO_KNOWLEDGE = {
       techStack: ["React", "Electron", "FastAPI", "Python", "Ollama", "ChromaDB", "Vosk", "Coqui-TTS"],
       highlights: [
         "20+ Desktop Automation Tools",
-        "100% Local AI (Privacy-focused)",
+        "100% Local AI inference via Ollama (llama3)",
         "Voice Interaction with Vosk & Coqui-TTS",
-        "Semantic Memory using ChromaDB vector database",
-        "Ollama (llama3) LLM integration"
+        "Semantic Memory using ChromaDB vector database"
       ],
       github: "https://github.com/ilakkiyan-j/sofi",
     },
     {
-      name: "MEDORC",
-      tagline: "AI-Powered Healthcare Platform",
-      status: "Healthcare Platform",
-      description: "A secure healthcare platform combining scalable backend architecture, role-based access control, and an intelligent RASA-powered healthcare assistant.",
-      techStack: ["TypeScript", "Express", "Prisma", "PostgreSQL", "JWT", "RASA"],
-      highlights: [
-        "50+ Scalable REST Endpoints",
-        "20+ NLU AI Intents & 10+ Custom Entities",
-        "Role-Based Access Control (RBAC) & JWT auth",
-        "Co-authored research paper presented at ICIRCA 2026 on Digital-Twin-Driven Health Data Orchestration"
-      ],
-      github: "https://github.com/Medorc/medorc-backend",
-    },
-    {
       name: "Nexaid",
-      tagline: "Emergency Assistance Application",
-      description: "Mobile/web application built for emergency response coordination and real-time assistance.",
+      tagline: "Emergency Response Application",
+      description: "Award-winning emergency response platform that won 3rd Place at Avantaa'24 Project Expo.",
       year: "2024",
-    }
+    },
   ],
 
   achievements: [
-    { title: "Smart India Hackathon", detail: "2nd Place among 30+ competing teams in internal SIH selections (2024)" },
-    { title: "Avantaa Project Expo", detail: "3rd Place among competing teams for technical project innovation (2024)" },
-    { title: "ICIRCA 2026 Research", detail: "Co-authored and presented research on Digital-Twin-Driven Health Data Orchestration (2026)" },
-    { title: "Agentic AI Certified Foundations Associate", detail: "Oracle Certified Foundations Associate credential in Agentic AI (Jul 2026)" },
-    { title: "HackerRank Software Engineer", detail: "Certified Software Engineer (Jul 2025)" },
-    { title: "The Complete 2024 Web Development Bootcamp", detail: "Udemy Full-Stack Web Development certification (Nov 2024)" },
-    { title: "Datacom Job Simulation", detail: "Completed Software Engineering Job Simulation" },
+    { title: "Smart India Hackathon (SIH)", detail: "Secured 2nd Place at SIH internal college round among 30+ teams." },
+    { title: "Avantaa'24 Project Expo", detail: "Led team to 3rd Place at Avantaa'24 Project Expo for Nexaid." },
+    { title: "ICIRCA 2026 Research Paper", detail: "Co-authored 'Medorc: A Digital-Twin-Driven Framework for Real-Time Health Data Orchestration', presented at ICIRCA 2026." },
+    { title: "Problem Solving", detail: "LeetCode Contest Rating: 1641; Solved 700+ Data Structures & Algorithms problems across LeetCode & GeeksforGeeks." },
+    { title: "Agentic AI Certified Foundations Associate – Oracle", detail: "Oracle credential in Agentic AI foundations and multi-agent workflows (Jul 2026)." },
+    { title: "Software Engineer – HackerRank", detail: "Certified in Software Engineering principles and algorithmic problem solving (Jul 2025)." },
+    { title: "The Complete 2024 Web Development Bootcamp – Udemy", detail: "Comprehensive full-stack development credential (Nov 2024)." },
   ],
 
   skills: {
-    languages: ["TypeScript", "JavaScript", "Python", "SQL"],
-    frontend: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Three.js / React Three Fiber", "GSAP"],
-    backend: ["Node.js", "Express", "FastAPI", "PostgreSQL", "Prisma ORM", "RESTful APIs", "JWT"],
-    aiAndMl: ["Ollama", "Local LLMs", "RASA NLU", "ChromaDB (Vector DB)", "LangChain / RAG", "Vosk", "Coqui-TTS"],
-    devopsAndTools: ["Docker", "Git / GitHub", "Electron", "Postman", "Linux"],
-  }
+    languages: ["Python", "TypeScript", "JavaScript", "C++"],
+    frontend: ["React.js", "Tailwind CSS", "Next.js", "HTML5", "CSS3", "Vite"],
+    backend: ["FastAPI", "Node.js", "Express.js", "Prisma ORM", "RESTful APIs", "JWT"],
+    databases: ["PostgreSQL", "DynamoDB", "MySQL"],
+    aiAndMl: ["Agentic AI", "Amazon Bedrock", "LLMs", "RAG", "Ollama", "RASA", "Prompt Engineering", "ChromaDB"],
+    cloudAndDevops: ["AWS Amplify", "Amazon S3", "AWS Cognito", "Vercel", "Render", "Docker"],
+    tools: ["Git", "Docker", "Postman", "GitHub", "Figma"],
+  },
 };
 
 export const RIVEN_SYSTEM_PROMPT = `
-You are RIVEN, an AI assistant built into Ilakkiyan J's portfolio website.
-Your mission is to represent Ilakkiyan to recruiters, engineering managers, clients, and visitors.
-You speak directly, confidently, professionally, and warmly. You maintain a sleek, intelligent, tech-forward persona.
+You are RIVEN, an intelligent, sleek AI assistant built into Ilakkiyan J's portfolio website.
+Your mission is to represent Ilakkiyan to recruiters, engineering managers, clients, and technical collaborators.
+You speak directly, confidently, professionally, warmly, and with deep technical precision.
 
-Key Guidelines:
-  - State clearly that Ilakkiyan recently completed an AI Internship @ AICTE — IBM SkillsBuild — 1M1B (Jul 2026 – Aug 2026) and is actively seeking full-time Full-Stack & AI Software Engineering roles.
-  - Detail his internship focus on Large Language Models (LLMs), IBM Granite, RAG, and Agentic AI solutions.
-  - Highlight Ilakkiyan's technical strengths: Full-Stack engineering, AI integration, 700+ DSA problems solved, 1641 LeetCode rating, building production-ready projects (SOFI, MEDORC).
-  - Keep responses concise (2-4 paragraphs max or clean bullet points). Avoid fluff or overly robotic pleasantries.
-  - Always provide helpful direct links (emailing him at ilakkiyanj03@gmail.com, GitHub at https://github.com/ilakkiyan-j, LinkedIn at https://www.linkedin.com/in/ilakkiyan-j).
+Key Facts About Ilakkiyan:
+- Current Status: Open to Full-Time Software Engineering, Full-Stack, and AI Engineer roles.
+- Education: Bachelor of Engineering in Computer Science and Design, Karpagam College of Engineering (CGPA: 8.5/10, Apr 2026).
+- Flagship Project: ALXO — AI Scope Management Platform (Sep 2026). Led backend & AWS infra (Amazon Bedrock, Claude, DynamoDB, S3, Amplify) to classify scope creep and calculate cost impact automatically.
+- Research & Healthcare: Medorc — AI-Powered Healthcare Platform (Jan 2026). 50+ type-safe REST APIs, RASA assistant (20+ intents), and co-authored publication at ICIRCA 2026.
+- Work Experience: AI Intern @ AICTE — IBM SkillsBuild — 1M1B (Jul 2026 – Sep 2026). Built ReServe AI (food surplus forecasting, redistribution, RAG, NLP).
+- Problem Solving: LeetCode Contest Rating 1641; 700+ DSA problems solved across LeetCode and GeeksforGeeks.
+- Competitions: 2nd Place in Smart India Hackathon (SIH) internal college round (30+ teams); 3rd Place at Avantaa'24 Project Expo.
+- Certifications: Oracle Certified Foundations Associate in Agentic AI (Jul 2026), HackerRank Software Engineer (Jul 2025).
 
-Here is the exact data about Ilakkiyan J:
-${JSON.stringify(PORTFOLIO_KNOWLEDGE, null, 2)}
+Tone & Structure:
+- Provide concise, punchy, well-formatted answers (markdown bullets and bold text).
+- Emphasize his ability to bridge scalable backend engineering, AWS cloud, and Agentic AI solutions.
+- Always offer direct contact information: Email ilakkiyanj03@gmail.com, GitHub https://github.com/ilakkiyan-j, LinkedIn https://www.linkedin.com/in/ilakkiyan-j.
 `;

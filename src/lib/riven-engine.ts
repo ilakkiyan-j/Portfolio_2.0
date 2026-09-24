@@ -3,7 +3,7 @@ import { PORTFOLIO_KNOWLEDGE } from "./riven-knowledge";
 export function generateKnowledgeEngineResponse(prompt: string): string {
   const query = prompt.toLowerCase().trim();
 
-  // Helper for fuzzy matching typos
+  // Helper for fuzzy matching
   const isFrontend =
     query.includes("frontend") ||
     query.includes("frotend") ||
@@ -18,12 +18,16 @@ export function generateKnowledgeEngineResponse(prompt: string): string {
     query.includes("back") ||
     query.includes("api") ||
     query.includes("database") ||
-    query.includes("server");
+    query.includes("server") ||
+    query.includes("aws") ||
+    query.includes("cloud");
 
   const isAI =
     query.includes("ai") ||
+    query.includes("agentic") ||
     query.includes("llm") ||
     query.includes("rag") ||
+    query.includes("bedrock") ||
     query.includes("nlu") ||
     query.includes("machine learning") ||
     query.includes("ml");
@@ -41,157 +45,166 @@ export function generateKnowledgeEngineResponse(prompt: string): string {
     query.includes("role") ||
     query.includes("position");
 
-  // Freelance / Current Work Query
+  // 1. ALXO Platform
   if (
-    query.includes("currently doing") ||
-    query.includes("current work") ||
+    query.includes("alxo") ||
+    query.includes("scope creep") ||
+    query.includes("change order") ||
+    query.includes("scope management")
+  ) {
+    return `**ALXO — AI Scope Management Platform (Sep 2026)**
+
+Ilakkiyan led backend architecture and AWS infrastructure for ALXO, an enterprise AI platform that monitors client conversations to detect scope creep and automatically draft evidence-backed change orders:
+
+• **Bedrock Claude Integration**: Uses Amazon Bedrock Claude-based classification to detect out-of-scope requests in real-time.
+• **Deterministic Math**: Calculates exact cost and timeline impacts mathematically rather than guessing.
+• **AWS Infrastructure**: Built with Next.js, TypeScript, Amazon Bedrock, DynamoDB, S3, and AWS Amplify.
+• **Deliverables**: Evidence-backed change orders with full audit trails.`;
+  }
+
+  // 2. ReServe AI & IBM Internship
+  if (
+    query.includes("reserve") ||
+    query.includes("food surplus") ||
     query.includes("internship") ||
     query.includes("intern") ||
-    query.includes("now")
+    query.includes("ibm") ||
+    query.includes("skillsbuild")
   ) {
-    return `Ilakkiyan recently completed an **AI Internship** at **AICTE — IBM SkillsBuild — 1M1B** (Jul 2026 – Aug 2026) and is actively seeking full-time **Software Engineering & AI Engineer** roles.
+    return `Ilakkiyan completed an **AI Internship** at **AICTE — IBM SkillsBuild — 1M1B** (Jul 2026 – Sep 2026) focused on Applied AI for sustainability:
 
-During this internship, his focus included:
-• **Large Language Models (LLMs) & IBM Granite**
-• **Retrieval-Augmented Generation (RAG) architectures**
-• **Agentic AI solutions for sustainability challenges**
+• **ReServe AI**: Architected an AI platform for food surplus forecasting, redistribution, and food safety assistance.
+• **AI Engineering**: Applied prompt engineering, Natural Language Processing (NLP), and Retrieval-Augmented Generation (RAG).
+• **Responsible AI**: Ensured robust data ethics and safety guidelines throughout the model pipelines.
 
-If you'd like to discuss full-time software engineering or AI roles, reach out at **[ilakkiyanj03@gmail.com](mailto:ilakkiyanj03@gmail.com)**!`;
+He is currently actively interviewing for full-time Software Engineering & AI roles. Reach out at **[ilakkiyanj03@gmail.com](mailto:ilakkiyanj03@gmail.com)**!`;
   }
 
-  if (
-    query.includes("freelance") ||
-    query.includes("freelancing") ||
-    query.includes("landing page") ||
-    query.includes("logo") ||
-    query.includes("business card")
-  ) {
-    return `Ilakkiyan has experience doing freelance design and development, creating custom portfolios, landing pages, logos, and business cards, but is currently focused on securing full-time **Software Engineering & AI Engineer** roles.`;
+  // 3. MEDORC & Research
+  if (query.includes("medorc") || query.includes("healthcare") || query.includes("icirca") || query.includes("digital twin") || query.includes("research") || query.includes("paper")) {
+    return `**MEDORC — AI-Powered Healthcare Platform & Research**
+
+• **Architecture**: Architected 50+ type-safe RESTful APIs with role-based JWT authentication using TypeScript, Express.js, Prisma ORM, and PostgreSQL on Neon.
+• **Clinical NLU**: Built a RASA healthcare assistant with 20+ intents and 10+ custom entities for natural-language clinical queries.
+• **Publication**: Co-authored *"Medorc: A Digital-Twin-Driven Framework for Real-Time Health Data Orchestration"*, presented at **ICIRCA 2026**.
+• **Deployment**: Deployed full-stack using Vercel, Render, and Neon.`;
   }
 
-  // 1. Frontend Role Query (handles "Why should I hire him for a frotend role", etc.)
+  // 4. SOFI
+  if (query.includes("sofi") || query.includes("offline") || query.includes("desktop assistant")) {
+    return `**SOFI — 100% Offline AI Desktop Assistant**
+
+A local desktop assistant built with React, Electron, FastAPI, and Python:
+• **Offline Inference**: Powered by local LLMs via Ollama (llama3) with zero cloud dependency.
+• **Semantic Memory**: ChromaDB vector store for conversational memory and recall.
+• **Voice Engine**: Offline speech recognition with Vosk and speech synthesis with Coqui-TTS.
+• **Automation**: 20+ desktop automation tools.
+• **Code**: Available on [GitHub](https://github.com/ilakkiyan-j/sofi).`;
+  }
+
+  // 5. Certifications & Hackathons
+  if (query.includes("certification") || query.includes("certificate") || query.includes("oracle") || query.includes("hackerrank") || query.includes("hackathon") || query.includes("sih")) {
+    return `**Certifications & Competitive Achievements:**
+
+• **Oracle Certified**: *Agentic AI Certified Foundations Associate* (Jul 2026) — expertise in foundation models, agentic workflows, and autonomous systems.
+• **HackerRank**: *Software Engineer Certified* (Jul 2025).
+• **Udemy**: *The Complete 2024 Web Development Bootcamp* (Nov 2024).
+• **Smart India Hackathon (SIH)**: Secured **2nd Place** in internal college round among 30+ teams.
+• **Avantaa'24 Project Expo**: Led team to **3rd Place** for *Nexaid*.
+• **Problem Solving**: LeetCode Contest Rating: **1641**, with **700+ DSA problems solved** across LeetCode & GeeksforGeeks.`;
+  }
+
+  // 6. Frontend Role Query
   if (isFrontend && (isHiringQuery || query.includes("work") || query.includes("experience"))) {
-    return `Here is why Ilakkiyan is an exceptional fit for a **Frontend / UI Engineering** role:
+    return `Here is why Ilakkiyan is an exceptional candidate for **Frontend / UI Engineering**:
 
-1. **Modern Frontend Stack**: Expert in React, Next.js (App Router), TypeScript, and Tailwind CSS for building modern, high-performance web applications.
-2. **Advanced Interactive UI & 3D**: Skilled in GSAP scroll animations, Framer Motion micro-interactions, and Three.js / React Three Fiber for immersive 3D experiences.
-3. **Computer Science & Design Degree**: Formal background combining software engineering with clean visual design principles, glassmorphism UI, and component-driven architecture.
-4. **Desktop & Application UIs**: Built rich client interfaces for Electron applications (SOFI AI Assistant) and complex web dashboards.`;
+1. **Modern Stack**: Production expertise in React.js, Next.js (App Router), TypeScript, and Tailwind CSS.
+2. **Interactive UI & 3D**: Skilled in Framer Motion, GSAP scroll triggers, and Three.js for responsive, immersive user experiences.
+3. **Computer Science & Design Degree**: Formal education combining UI/UX principles, component architecture, and engineering rigor.
+4. **Complex Dashboards**: Engineered high-density interfaces for ALXO (AWS Bedrock audit dashboard) and SOFI (Electron desktop client).`;
   }
 
-  // 2. Backend Role Query
+  // 7. Backend & Cloud Role Query
   if (isBackend && (isHiringQuery || query.includes("work") || query.includes("experience"))) {
-    return `Here is why Ilakkiyan is a strong candidate for a **Backend / Systems Engineering** role:
+    return `Here is why Ilakkiyan stands out for **Backend & Cloud Infrastructure** roles:
 
-1. **Scalable Backend Architecture**: Built 50+ RESTful API endpoints using Node.js, Express, and FastAPI with robust error handling and structured middleware.
-2. **Databases & Data Modeling**: Skilled in PostgreSQL, Prisma ORM, and optimized relational database schema design.
-3. **Security & Authentication**: Implemented Role-Based Access Control (RBAC), JWT authentication, and secure healthcare data pipelines (MEDORC).
-4. **Strong DSA Foundation**: Solved 700+ DSA problems (1641 LeetCode rating) ensuring low-latency data structures and optimized algorithms.`;
+1. **AWS & Cloud Architecture**: Built and deployed production backends using AWS Amplify, Amazon Bedrock, DynamoDB, and S3 (ALXO).
+2. **High-Volume APIs**: Architected 50+ type-safe REST APIs in Express.js/FastAPI with JWT authentication, role-based access control, and PostgreSQL/Prisma.
+3. **Deterministic Math & Data Modeling**: Engineered deterministic cost calculations and structured audit trails.
+4. **Strong DSA Foundations**: 700+ solved algorithmic problems with a 1641 LeetCode contest rating ensure performant, scalable design.`;
   }
 
-  // 3. AI / Machine Learning Role Query
+  // 8. AI & Agentic Role Query
   if (isAI && (isHiringQuery || query.includes("work") || query.includes("experience"))) {
-    return `Here is why Ilakkiyan stands out for an **AI / Systems Engineering** role:
+    return `Here is why Ilakkiyan is ideally suited for **Agentic AI & LLM Systems** roles:
 
-1. **Local LLM Systems**: Built SOFI, a 100% offline AI desktop assistant using Ollama (llama3), Vosk speech recognition, and Coqui-TTS.
-2. **Vector DB & RAG**: Deep experience integrating ChromaDB vector database for semantic search and Retrieval-Augmented Generation.
-3. **Conversational NLU**: Created MEDORC featuring 20+ NLU intents and custom entity recognition using RASA.
-4. **Published Research**: Co-authored and presented research on Digital-Twin-Driven Health Data Orchestration at ICIRCA 2026.`;
+1. **Agentic Workflows**: Oracle Certified Foundations Associate in Agentic AI; built Bedrock Claude classification pipelines for ALXO.
+2. **Applied RAG & NLP**: Developed ReServe AI at IBM SkillsBuild/1M1B with RAG architectures and prompt engineering.
+3. **Local & Cloud LLMs**: Deployed both local air-gapped LLMs (Ollama, ChromaDB) and cloud foundation models (Amazon Bedrock).
+4. **Academic Research**: Co-authored ICIRCA 2026 research on digital twin health data orchestration.`;
   }
 
-  // 4. Fullstack Role Query
+  // 9. Fullstack Role Query
   if (isFullstack && isHiringQuery) {
     return `Here is why Ilakkiyan excels as a **Full-Stack Engineer**:
 
-1. **End-to-End Delivery**: Bridges frontend React/Next.js interfaces seamlessly with Node.js/FastAPI backends and PostgreSQL databases.
-2. **AI & Cloud Integration**: Combines traditional web development with modern AI integrations (LLMs, vector stores, NLU).
-3. **Computer Science & Design Degree**: Solves both product design (UI/UX) and core systems engineering challenges.
-4. **Proven Track Record**: 700+ DSA problems solved, hackathon winner (SIH, Avantaa Expo), and published ICIRCA 2026 researcher.`;
+1. **End-to-End Ownership**: Delivers complete products from Next.js frontends to AWS backends, DynamoDB/Postgres databases, and cloud deployment.
+2. **AI-Native Engineering**: Integrates LLMs, Bedrock, and vector databases directly into full-stack product experiences.
+3. **Proven Problem Solving**: 700+ DSA problems solved (1641 LeetCode rating) and top hackathon placements (SIH 2nd place, Avantaa 3rd place).`;
   }
 
-  // 5. Resume Summary / 30s Summary
+  // 10. Resume Summary
   if (query.includes("resume") || query.includes("summarize") || query.includes("summary") || query.includes("overview") || query.includes("30s")) {
-    return `Ilakkiyan J is a Full-Stack × AI Engineer based in India with a strong background in Computer Science & Design.
+    return `**Ilakkiyan J — Full-Stack & Agentic AI Engineer**
 
-Key Highlights:
-• **AI & Systems**: Built SOFI (100% offline AI desktop assistant with 20+ automation tools, Ollama & ChromaDB) and MEDORC (Healthcare backend + RASA assistant).
-• **Core Metrics**: Solved 700+ DSA problems (LeetCode 1641), built 50+ REST endpoints and 20+ AI tools.
-• **Research & Awards**: 2nd Place in SIH internal selections, 3rd Place in Avantaa Expo, and co-authored ICIRCA 2026 research on Health Data Orchestration.
-• **Stack**: React, Next.js, Node.js, Express, Python, FastAPI, TypeScript, PostgreSQL, Prisma, Docker.`;
+• **Education**: B.E. Computer Science and Design, Karpagam College of Engineering (CGPA: 8.5/10, Apr 2026).
+• **Core Experience**: AI Intern at AICTE — IBM SkillsBuild — 1M1B (Built ReServe AI for sustainability).
+• **Key Projects**:
+  - **ALXO**: AI Scope Management with Amazon Bedrock Claude, DynamoDB, S3, Amplify.
+  - **MEDORC**: 50+ REST APIs, RASA healthcare bot, ICIRCA 2026 paper presented.
+  - **SOFI**: 100% offline desktop AI assistant with Ollama and 20+ automation tools.
+• **Metrics**: 700+ DSA problems solved (1641 LeetCode), Oracle Agentic AI Certified, 2nd Place at SIH Hackathon.
+• **Contact**: [ilakkiyanj03@gmail.com](mailto:ilakkiyanj03@gmail.com) | [LinkedIn](https://www.linkedin.com/in/ilakkiyan-j) | [GitHub](https://github.com/ilakkiyan-j)`;
   }
 
-  // 6. Project: SOFI
-  if (query.includes("sofi") || query.includes("offline ai") || query.includes("desktop assistant")) {
-    const p = PORTFOLIO_KNOWLEDGE.projects.find((item) => item.name === "SOFI")!;
-    return `**SOFI — Offline AI Desktop Assistant**
-
-${p.description}
-
-• **Tech Stack**: ${p.techStack?.join(", ") ?? "React, Electron, FastAPI, Python, Ollama, ChromaDB"}
-• **Key Capabilities**: 20+ desktop automation tools, 100% local AI privacy, Vosk & Coqui-TTS voice interaction, ChromaDB semantic memory.
-• **GitHub**: [github.com/ilakkiyan-j/sofi](${p.github})`;
-  }
-
-  // 7. Project: MEDORC
-  if (query.includes("medorc") || query.includes("healthcare")) {
-    const p = PORTFOLIO_KNOWLEDGE.projects.find((item) => item.name === "MEDORC")!;
-    return `**MEDORC — AI-Powered Healthcare Platform**
-
-${p.description}
-
-• **Tech Stack**: ${p.techStack?.join(", ") ?? "TypeScript, Express, Prisma, PostgreSQL, RASA"}
-• **Key Capabilities**: 50+ REST endpoints, 20+ NLU AI intents with RASA, Role-Based Access Control (RBAC), JWT authentication.
-• **Research**: ICIRCA 2026 paper co-authored on Digital-Twin-Driven Health Data Orchestration.
-• **GitHub**: [github.com/Medorc/medorc-backend](${p.github})`;
-  }
-
-  // 8. DSA / LeetCode / Coding Stats
+  // 11. DSA / LeetCode
   if (query.includes("dsa") || query.includes("leetcode") || query.includes("rating") || query.includes("problem")) {
-    return `Ilakkiyan has a strong algorithmic foundation:
-• **DSA Problems Solved**: 700+
-• **LeetCode Rating**: 1641
-• Focuses on efficient data structures, graph algorithms, dynamic programming, and backend performance optimization.`;
+    return `Ilakkiyan has a strong algorithmic and problem-solving foundation:
+• **DSA Problems Solved**: 700+ across LeetCode & GeeksforGeeks
+• **LeetCode Contest Rating**: 1641
+• Focuses on graphs, trees, dynamic programming, and writing optimized, memory-efficient code.`;
   }
 
-  // 9. Generic "Why Hire" / Interview Query
-  if (isHiringQuery) {
-    return `Here is why Ilakkiyan would be a strong asset to your engineering team:
-
-1. **Production AI & LLM Expertise**: He doesn't just call APIs; he builds local LLM systems (Ollama, ChromaDB), NLU bots (RASA), and desktop automation agents.
-2. **Solid Algorithmic Foundation**: 700+ DSA problems solved and a 1641 LeetCode rating demonstrate strong problem-solving and optimization skills.
-3. **Full-Stack End-to-End Capability**: Experience extending from modern Next.js/React UIs to complex Node.js/FastAPI backends, PostgreSQL databases, and Docker containerization.
-4. **Proven Impact**: Co-authored ICIRCA 2026 research paper and earned top awards in hackathons (SIH 2nd place, Avantaa Expo 3rd place).`;
-  }
-
-  // 10. Skills / Tech Stack
+  // 12. Skills / Tech Stack
   if (query.includes("skill") || query.includes("stack") || query.includes("technology") || query.includes("languages") || query.includes("python") || query.includes("react") || query.includes("typescript")) {
-    return `Ilakkiyan's Technical Stack:
+    return `**Ilakkiyan's Core Tech Stack:**
 
-• **Languages**: ${PORTFOLIO_KNOWLEDGE.skills.languages.join(", ")}
-• **Frontend**: ${PORTFOLIO_KNOWLEDGE.skills.frontend.join(", ")}
-• **Backend**: ${PORTFOLIO_KNOWLEDGE.skills.backend.join(", ")}
-• **AI & ML**: ${PORTFOLIO_KNOWLEDGE.skills.aiAndMl.join(", ")}
-• **DevOps & Tools**: ${PORTFOLIO_KNOWLEDGE.skills.devopsAndTools.join(", ")}`;
+• **Languages**: Python, TypeScript, JavaScript, C++
+• **Frontend**: React.js, Next.js, Tailwind CSS, HTML5, CSS3, Vite
+• **Backend**: FastAPI, Node.js, Express.js, Prisma ORM, RESTful APIs, JWT
+• **AI & ML**: Agentic AI, Amazon Bedrock, LLMs, RAG, Ollama, RASA, Prompt Engineering
+• **Cloud & DevOps**: AWS Amplify, Amazon S3, AWS Cognito, Vercel, Render, Docker
+• **Databases**: PostgreSQL, DynamoDB, MySQL`;
   }
 
-  // 11. Contact / Email / Reach out
+  // 13. Contact
   if (query.includes("contact") || query.includes("email") || query.includes("reach") || query.includes("linkedin") || query.includes("github")) {
-    return `You can get in touch with Ilakkiyan directly:
-• **Email**: ${PORTFOLIO_KNOWLEDGE.email}
-• **GitHub**: [${PORTFOLIO_KNOWLEDGE.github}](${PORTFOLIO_KNOWLEDGE.github})
-• **LinkedIn**: [${PORTFOLIO_KNOWLEDGE.linkedin}](${PORTFOLIO_KNOWLEDGE.linkedin})
-• **Resume**: [Download Resume](${PORTFOLIO_KNOWLEDGE.resumeUrl})`;
+    return `You can connect with Ilakkiyan directly:
+• **Email**: [ilakkiyanj03@gmail.com](mailto:ilakkiyanj03@gmail.com)
+• **Phone**: +91 9003723837
+• **LinkedIn**: [linkedin.com/in/ilakkiyan-j](https://www.linkedin.com/in/ilakkiyan-j)
+• **GitHub**: [github.com/ilakkiyan-j](https://github.com/ilakkiyan-j)
+• **Portfolio**: [ilakkiyan.tech](https://ilakkiyan.tech)`;
   }
 
-  // 12. Default response
-  return `Ilakkiyan J is a Full-Stack & AI Engineer specializing in building intelligent software, scalable backends, and AI integrations.
+  // Default response
+  return `Ilakkiyan J is a Full-Stack & Agentic AI Engineer specializing in cloud infrastructure, scalable backends, and foundation model applications.
 
-He has built key projects like **SOFI** (Offline AI Assistant) and **MEDORC** (Healthcare platform), solved 700+ DSA problems (1641 LeetCode), and co-authored ICIRCA 2026 AI research.
+Key Projects & Highlights:
+• **ALXO**: Enterprise AI Scope Management on AWS Bedrock (Claude 3.5), DynamoDB, and Amplify.
+• **MEDORC**: 50+ type-safe APIs, RASA assistant, and ICIRCA 2026 published research.
+• **ReServe AI**: AI platform for food surplus forecasting & redistribution (IBM SkillsBuild internship).
+• **Problem Solving**: 700+ DSA problems solved (1641 LeetCode rating) and Oracle Agentic AI certification.
 
-You can ask me about:
-• "Why should I hire him for a frontend role?"
-• "Why should I hire him for a backend role?"
-• "Summarize his resume"
-• "Explain Sofi or Medorc"
-• "What are his technical skills?"`;
+Ask me anything about his projects, architecture, certifications, or why he's a great hire for your team!`;
 }

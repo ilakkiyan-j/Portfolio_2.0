@@ -22,118 +22,88 @@ interface Milestone {
 const MILESTONES: Milestone[] = [
   {
     year: "Sep 2026",
-    title: "Think41 Tech Event | Forward Deployed Engineering & AI Platforms",
+    title: "ALXO — AI Scope Management Platform",
     description: (
       <ul className="list-disc pl-4 space-y-1 mt-1 text-muted-foreground text-xs md:text-sm">
-        <li>Explored <strong>Forward Deployed Engineering (FDE)</strong> and how client-embedded engineering teams build real-world AI applications.</li>
-        <li>Gained hands-on experience with Think41 platforms including <strong>Snapcode</strong> (AI code acceleration) and <strong>Recruit41</strong> (AI talent intelligence).</li>
-        <li>Networked with developers and AI enthusiasts during Bengaluru Tech Week.</li>
+        <li>Led backend architecture &amp; AWS infrastructure for an enterprise AI platform that detects scope creep from conversations.</li>
+        <li>Engineered Amazon Bedrock Claude-based classification, prompt workflows, APIs, and deterministic cost-impact math.</li>
+        <li>Designed and deployed the end-to-end platform using AWS Amplify, Bedrock, DynamoDB, and S3.</li>
       </ul>
     ),
-    highlight: true,
-    icon: <Users size={14} />,
-    side: "right",
-  },
-  {
-    year: "Sep 2026",
-    title: "Neo4j Graph AI & Knowledge Representation | Bengaluru Tech Week",
-    description: (
-      <ul className="list-disc pl-4 space-y-1 mt-1 text-muted-foreground text-xs md:text-sm">
-        <li>Attended Neo4j workshop on Knowledge Graphs and Graph Databases for modern AI architectures.</li>
-        <li>Explored <strong>Graph RAG</strong> and entity relationships to enhance AI Agent reasoning and context-aware knowledge retrieval.</li>
-      </ul>
-    ),
-    highlight: true,
-    icon: <Network size={14} />,
-    side: "left",
-  },
-  {
-    year: "Jul 2026 – Aug 2026",
-    title: "AI Intern | AICTE — IBM SkillsBuild — 1M1B",
-    description: (
-      <ul className="list-disc pl-4 space-y-1 mt-1 text-muted-foreground text-xs md:text-sm">
-        <li>Selected for a competitive 6-week virtual AI internship organized by 1M1B and co-certified by AICTE and IBM SkillsBuild.</li>
-        <li>Completing intensive technical onboarding focused on Large Language Models (LLMs), IBM Granite, and Retrieval-Augmented Generation (RAG) architectures.</li>
-        <li>Preparing to architect and deploy Agentic AI solutions for sustainability challenges in upcoming project phases.</li>
-      </ul>
-    ),
-    highlight: true,
-    icon: <Sparkles size={14} />,
-    side: "right",
-  },
-  {
-    year: "Jul 2026",
-    title: "Agentic AI Certified Foundations Associate",
-    description: "Oracle Certified Foundations Associate credential in Agentic AI and foundation models.",
-    highlight: true,
-    icon: <Award size={14} />,
-    side: "left",
-  },
-  {
-    year: "2026",
-    title: "Sofi AI Desktop Assistant",
-    description: "Offline AI assistant combining local LLM inference, voice interaction, and desktop automation.",
     highlight: true,
     icon: <Briefcase size={14} />,
     side: "right",
   },
   {
-    year: "2026",
-    title: "ICIRCA 2026 Research",
-    description: "Co-authored and presented research on Digital-Twin-Driven Health Data Orchestration.",
+    year: "Jul 2026 – Sep 2026",
+    title: "AI Intern | AICTE — IBM SkillsBuild — 1M1B",
+    description: (
+      <ul className="list-disc pl-4 space-y-1 mt-1 text-muted-foreground text-xs md:text-sm">
+        <li>Completed an Applied AI internship focused on AI for sustainability.</li>
+        <li>Built <strong>ReServe AI</strong>, an AI platform for food surplus forecasting, redistribution, and food safety assistance.</li>
+        <li>Applied prompt engineering, NLP, RAG, and responsible AI techniques.</li>
+      </ul>
+    ),
+    highlight: true,
+    icon: <Sparkles size={14} />,
+    side: "left",
+  },
+  {
+    year: "Jul 2026",
+    title: "Agentic AI Certified Foundations Associate – Oracle",
+    description: "Oracle Certified Foundations Associate credential in Agentic AI, foundation models, and multi-agent architectures.",
+    highlight: true,
+    icon: <Award size={14} />,
+    side: "right",
+  },
+  {
+    year: "Jan 2026",
+    title: "Medorc Healthcare & ICIRCA 2026 Publication",
+    description: (
+      <ul className="list-disc pl-4 space-y-1 mt-1 text-muted-foreground text-xs md:text-sm">
+        <li>Co-authored <em>&quot;Medorc: A Digital-Twin-Driven Framework for Real-Time Health Data Orchestration&quot;</em>, presented at ICIRCA 2026.</li>
+        <li>Architected 50+ type-safe REST APIs and built a RASA assistant with 20+ intents and 10+ custom entities.</li>
+        <li>Deployed the full-stack platform using Vercel, Render, and Neon PostgreSQL.</li>
+      </ul>
+    ),
+    highlight: true,
     icon: <BookOpen size={14} />,
     side: "left",
   },
   {
     year: "2026",
-    title: "Medorc Healthcare",
-    description: "Scalable backend architecture and RASA-powered healthcare assistant.",
-    icon: <Briefcase size={14} />,
+    title: "Problem Solving: LeetCode Contest Rating 1641",
+    description: "Solved 700+ Data Structures and Algorithms problems across LeetCode and GeeksforGeeks with a 1641 contest rating.",
+    highlight: true,
+    icon: <Trophy size={14} />,
     side: "right",
   },
   {
-    year: "2026",
-    title: "Datacom Software Dev",
-    description: "Software Engineering Job Simulation completed.",
-    icon: <Briefcase size={14} />,
+    year: "2024 – 2025",
+    title: "Hackathon Victories & Avantaa Project Expo",
+    description: (
+      <ul className="list-disc pl-4 space-y-1 mt-1 text-muted-foreground text-xs md:text-sm">
+        <li>Secured <strong>2nd Place</strong> at Smart India Hackathon (SIH) internal college round among 30+ teams.</li>
+        <li>Led team to <strong>3rd Place</strong> at Avantaa&apos;24 Project Expo for <em>Nexaid</em>.</li>
+      </ul>
+    ),
+    highlight: true,
+    icon: <Trophy size={14} />,
     side: "left",
   },
   {
     year: "Jul 2025",
-    title: "Software Engineer",
-    description: "HackerRank Software Engineer certification.",
+    title: "Software Engineer – HackerRank",
+    description: "Validated expertise in software engineering principles, algorithms, and backend problem solving.",
     icon: <Award size={14} />,
     side: "right",
   },
   {
-    year: "2024",
-    title: "Smart India Hackathon",
-    description: "2nd Place among 30+ teams in internal SIH selections.",
-    highlight: true,
-    icon: <Trophy size={14} />,
-    side: "left",
-  },
-  {
-    year: "2024",
-    title: "Avantaa Project Expo",
-    description: "3rd Place among competing teams for technical innovation.",
-    highlight: true,
-    icon: <Trophy size={14} />,
-    side: "right",
-  },
-  {
     year: "Nov 2024",
-    title: "The Complete 2024 Web Development Bootcamp",
-    description: "Udemy certification covering full-stack web development.",
+    title: "The Complete 2024 Web Development Bootcamp – Udemy",
+    description: "Full-stack web development certification covering modern frontend, backend, databases, and deployment.",
     icon: <GraduationCap size={14} />,
     side: "left",
-  },
-  {
-    year: "2024",
-    title: "Nexaid",
-    description: "Built emergency response assistance application.",
-    icon: <Briefcase size={14} />,
-    side: "right",
   },
 ];
 

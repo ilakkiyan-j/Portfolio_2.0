@@ -53,7 +53,7 @@ export function HeroSection() {
               <span className="text-foreground font-medium">Open to Full-Time Roles</span>
               <span className="hidden sm:inline text-muted-foreground/40">•</span>
               <div className="flex items-center gap-1.5 text-muted-foreground">
-                <span>AI Intern @ IBM SkillsBuild</span>
+                <span>Full-Stack &amp; Agentic AI Engineer</span>
               </div>
             </motion.div>
 
@@ -64,7 +64,7 @@ export function HeroSection() {
               I build{" "}
               <span className="text-primary relative inline-block after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[3px] after:bg-gradient-to-r after:from-primary after:via-nebula-purple after:to-nebula-pink after:rounded-full after:opacity-60">
                 <WordCycle
-                  words={["intelligent", "scalable", "innovative", "powerful"]}
+                  words={["Agentic AI", "scalable cloud", "intelligent", "full-stack"]}
                   interval={3000}
                 />
               </span>

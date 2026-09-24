@@ -5,9 +5,9 @@ import { AnimatedCounter } from "./animated-counter";
 import { Code2, Brain, Server } from "lucide-react";
 
 const TECH_STACK = [
-  "React", "TypeScript", "Next.js", "Node.js", "Python", "FastAPI",
-  "PostgreSQL", "Prisma", "Docker", "Git", "Tailwind", "Three.js",
-  "Ollama", "RASA", "ChromaDB", "Express",
+  "Amazon Bedrock", "Agentic AI", "Next.js", "TypeScript", "Python", "FastAPI",
+  "AWS Amplify", "DynamoDB", "PostgreSQL", "React", "C++", "RAG",
+  "Ollama", "Prisma", "Docker", "Node.js", "Express", "Tailwind",
 ];
 
 function TechRibbon() {
@@ -38,15 +38,15 @@ export function AboutSection() {
 
   const metrics = [
     { label: "DSA Problems Solved", value: 700, suffix: "+" },
-    { label: "LeetCode Rating", value: 1641, suffix: "" },
+    { label: "LeetCode Contest Rating", value: 1641, suffix: "" },
     { label: "API Endpoints Built", value: 50, suffix: "+" },
-    { label: "AI Tools Built", value: 20, suffix: "+" },
+    { label: "Hackathons & Honors", value: 2, suffix: "+" },
   ];
 
   const focusAreas = [
-    { icon: Brain, label: "AI Systems", desc: "LLMs, RAG, NLU" },
-    { icon: Server, label: "Backend", desc: "APIs, Databases, Auth" },
-    { icon: Code2, label: "Full-Stack", desc: "UI to Infrastructure" },
+    { icon: Brain, label: "Agentic AI", desc: "Bedrock, LLMs, RAG" },
+    { icon: Server, label: "Cloud & Backend", desc: "AWS, APIs, DynamoDB" },
+    { icon: Code2, label: "Full-Stack", desc: "Next.js, TypeScript, UI" },
   ];
 
   return (
@@ -97,7 +97,7 @@ export function AboutSection() {
               <div className="relative z-10">
                 <h3 className="text-xl font-bold mb-0.5" style={{ color: "var(--foreground)" }}>Ilakkiyan J</h3>
                 <p className="font-semibold text-sm mb-5" style={{ color: "var(--primary)" }}>
-                  Full-Stack × AI Engineer · IBM SkillsBuild Intern
+                  Full-Stack &amp; Agentic AI Engineer · AWS &amp; Bedrock Builder
                 </p>
 
                 <div className="flex items-center gap-2 mb-6 text-sm" style={{ color: "var(--muted-foreground)" }}>
@@ -145,9 +145,9 @@ export function AboutSection() {
               style={{ color: "var(--muted-foreground)" }}
             >
               <span className="font-semibold text-2xl leading-none" style={{ color: "var(--foreground)" }}>&ldquo;</span>
-              I&apos;m a Computer Science and Design graduate who enjoys building
-              complete products — from intuitive interfaces and scalable backends
-              to AI-powered applications that solve real problems.
+              I&apos;m a Computer Science and Design engineer who builds complete systems — from
+              modern full-stack web applications and scalable AWS cloud architectures to Agentic AI
+              platforms and LLM workflows that solve high-impact real-world problems.
               <span className="font-semibold text-2xl leading-none" style={{ color: "var(--foreground)" }}>&rdquo;</span>
             </div>
 
