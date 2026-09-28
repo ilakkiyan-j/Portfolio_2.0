@@ -31,11 +31,11 @@ export const metadata: Metadata = {
   description: "Portfolio of Ilakkiyan J — Full-Stack × AI Engineer & IBM SkillsBuild Intern. Building intelligent applications, AI systems, scalable backends, and digital experiences.",
   icons: {
     icon: [
-      { url: "/logo_light.png", href: "/logo_light.png" },
+      { url: "/icons/logo.png", href: "/icons/logo.png" },
       { url: "/icon.png", href: "/icon.png" },
     ],
-    shortcut: "/logo_light.png",
-    apple: "/logo_light.png",
+    shortcut: "/icons/logo.png",
+    apple: "/icons/logo.png",
   },
 };
 

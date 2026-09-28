@@ -94,7 +94,7 @@ export function Navbar() {
         <div className="flex items-center gap-3 sm:gap-4">
           <a href="#" className="flex items-center gap-2.5 text-lg sm:text-xl font-bold tracking-tighter hover:text-primary transition-colors">
             <Image
-              src="/logo_light.png"
+              src="/icons/logo.png"
               alt="Ilakkiyan Logo"
               width={26}
               height={26}
