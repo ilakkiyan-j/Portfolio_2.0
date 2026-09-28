@@ -1,12 +1,43 @@
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/navbar";
 import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
-import { ProjectLab } from "@/components/project-lab";
-import { ResearchSection } from "@/components/research-section";
-import { SkillsSection } from "@/components/skills-section";
-import { JourneySection } from "@/components/journey-section";
-import { ContactSection } from "@/components/contact-section";
 import { ScrollProgress } from "@/components/scroll-progress";
+
+const ProjectLab = dynamic(
+  () => import("@/components/project-lab").then((m) => m.ProjectLab),
+  {
+    loading: () => <div className="min-h-[400px] w-full" />,
+  }
+);
+
+const ResearchSection = dynamic(
+  () => import("@/components/research-section").then((m) => m.ResearchSection),
+  {
+    loading: () => <div className="min-h-[300px] w-full" />,
+  }
+);
+
+const SkillsSection = dynamic(
+  () => import("@/components/skills-section").then((m) => m.SkillsSection),
+  {
+    loading: () => <div className="min-h-[400px] w-full" />,
+  }
+);
+
+const JourneySection = dynamic(
+  () => import("@/components/journey-section").then((m) => m.JourneySection),
+  {
+    loading: () => <div className="min-h-[400px] w-full" />,
+  }
+);
+
+const ContactSection = dynamic(
+  () => import("@/components/contact-section").then((m) => m.ContactSection),
+  {
+    loading: () => <div className="min-h-[400px] w-full" />,
+  }
+);
 
 export default function Home() {
   return (

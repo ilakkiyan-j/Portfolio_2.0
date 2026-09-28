@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Moon, Sun, Monitor, Menu, X } from "lucide-react";
@@ -91,8 +92,16 @@ export function Navbar() {
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between">
         {/* LOGO */}
         <div className="flex items-center gap-3 sm:gap-4">
-          <a href="#" className="text-lg sm:text-xl font-bold tracking-tighter hover:text-primary transition-colors">
-            ILAKKIYAN.
+          <a href="#" className="flex items-center gap-2.5 text-lg sm:text-xl font-bold tracking-tighter hover:text-primary transition-colors">
+            <Image
+              src="/logo_light.png"
+              alt="Ilakkiyan Logo"
+              width={26}
+              height={26}
+              className="rounded-md object-contain"
+              priority
+            />
+            <span>ILAKKIYAN.</span>
           </a>
           <div className="hidden xl:flex items-center gap-2 text-xs font-medium px-3 py-1 rounded-full bg-surface-secondary border border-border">
             <span className="relative flex h-2 w-2">

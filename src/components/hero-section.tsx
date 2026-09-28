@@ -1,15 +1,27 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { ArrowRight, MessageSquare, ChevronDown } from "lucide-react";
-import { HeroNebulaContainer } from "./3d/hero-nebula-container";
 import { WordCycle } from "./word-cycle";
+
+const HeroNebulaContainer = dynamic(
+  () => import("./3d/hero-nebula-container").then((m) => m.HeroNebulaContainer),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="w-16 h-16 rounded-full border border-primary/20 animate-pulse" />
+      </div>
+    ),
+  }
+);
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 2.0 },
+    transition: { staggerChildren: 0.1, delayChildren: 0.1 },
   },
 };
 

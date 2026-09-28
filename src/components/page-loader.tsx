@@ -9,8 +9,8 @@ export function PageLoader() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setExiting(true);
-      setTimeout(() => setLoading(false), 600);
-    }, 1800);
+      setTimeout(() => setLoading(false), 250);
+    }, 150);
     return () => clearTimeout(timer);
   }, []);
 
